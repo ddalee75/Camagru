@@ -1,4 +1,4 @@
-SRC = docker-compose.yml
+SRC = ./docker-compose.yml
 NAME = Inception
 
 all: $(NAME)
