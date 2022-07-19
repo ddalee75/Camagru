@@ -30,6 +30,8 @@ services:
             - "9000"
         volumes:
             - ./app:/var/www/project
+        depends_on:
+            - mysql8-service
         networks:
             - camagru
 
@@ -48,3 +50,20 @@ services:
             MYSQL_PASSWORD: secret
         networks:
             - camagru
+    
+    # adminer
+    adminer:
+        image: adminer
+        container_name: adminer
+        environment:
+              ADMINER_DEFAULT_SERVER: mysql
+              ADMINER_DESIGN: lucas-sandery
+        depends_on:
+            - mysql8-service
+        networks:
+            - camagru
+        volumes:
+            - ./app:/var/www/projet
+        expose:
+            - "8888"
+    
