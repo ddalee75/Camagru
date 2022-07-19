@@ -56,14 +56,14 @@ services:
         image: adminer
         container_name: adminer
         environment:
-              ADMINER_DEFAULT_SERVER: mysql
               ADMINER_DESIGN: lucas-sandery
         depends_on:
             - mysql8-service
         networks:
             - camagru
+        restart: always
         volumes:
             - ./app:/var/www/projet
-        expose:
-            - "8888"
+        ports:
+            - "8888:8080"
     
