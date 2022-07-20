@@ -6,9 +6,10 @@
 </br></br></br>
 <center>
  <?php 
-    echo "Bonjour tout le monde<p>"; 
-    echo '<img src="./images/Pikachu.png" alt="pikachu">';
-    echo '<img src="./images/logo.png" alt="logo">'?>
+    echo "Bonjour tout le monde<p>"."</br>";
+    echo '<img src="./images/Pikachu.png" alt="pikachu">'."</br>";
+    echo '<img src="./images/logo.png" alt="logo">'."</br>";
+    ?>
 </center>
 </body>
 </html>
