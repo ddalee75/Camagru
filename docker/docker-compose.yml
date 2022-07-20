@@ -43,8 +43,9 @@ services:
             - "3306"
         volumes:
             - ./mysql:/var/lib/mysql
+        command: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';    
         restart: always # always restart unless stopped manually
-        environment:
+        environment: 
             MYSQL_ROOT_PASSWORD: camagru
             MYSQL_DATABASE: camagru
 
