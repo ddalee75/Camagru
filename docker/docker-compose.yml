@@ -73,7 +73,7 @@ volumes: #device a remettre ../app avant push"
     app:
         driver_opts:
             type: none
-            device: /media/sf_app
+            device: ../app
             o: bind
     
     mysql:
