@@ -4,7 +4,7 @@ NAME = Inception
 all: $(NAME)
 
 $(NAME):
-	docker-compose -f ${SRC} up --build -d 
+	docker-compose -f ${SRC} up --build -d
 
 clean:
 	docker-compose -f ${SRC} stop
@@ -15,7 +15,7 @@ fclean: clean
 
 prune: fclean
 	docker image prune -a
-	docker volume rm $$(docker volume ls -q)
+	#docker volume rm $$(docker volume ls -q)
 
 re: fclean all
 
