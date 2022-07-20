@@ -3,6 +3,11 @@
   <title>Test PHP</title>
  </head>
  <body>
- <?php echo "Bonjour le monde<p>"; ?>
+</br></br></br>
+<center>
+ <?php 
+    echo "Bonjour tout le monde<p>"; 
+    echo '<img src="./images/Pikachu.png" alt="pikachu">';?>
+</center>
 </body>
 </html>
