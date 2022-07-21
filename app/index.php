@@ -1,13 +1,15 @@
-<?php 
-$start_view = 'image_showpage&page=1';
-$view = (isset($_GET['view'])) ? $_GET['view'] : "";
-if(!empty($view)){
-	$controller = explode("_", $view)[0];
-	$action = explode("_", $view)[1];
-    header('Location:/controllers/'.$controller.'.php?action='.$action);
-} else {
-	$controller = explode("_", $start_view)[0];
-	$action = explode("_", $start_view)[1];
-    header('Location:/controllers/'.$controller.'.php?action='.$action);
-}
-?>
+<html>
+ <head>
+  <title>Test PHP</title>
+ </head>
+ <body>
+</br></br></br>
+<center>
+ <?php 
+    echo "Bonjour tout le monde<p>"."</br>";
+    echo '<img src="./images/Pikachu.png" alt="pikachu">'."</br>";
+    echo '<img src="./images/logo.png" alt="logo">'."</br>";
+    ?>
+</center>
+</body>
+</html>
