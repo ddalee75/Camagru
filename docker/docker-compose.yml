@@ -48,9 +48,9 @@ services:
         environment: 
             MYSQL_ROOT_PASSWORD: camagru
             MYSQL_DATABASE: camagru
-            MYSQL_HOST: mysql8-service
-            MYSQL_USER: ddalee
-            MYSQL_USER_PASSWORD: ddaleepwd
+            #MYSQL_HOST: mysql8-service
+            #MYSQL_USER: ddalee
+            #MYSQL_USER_PASSWORD: ddaleepwd
 
         networks:
             - camagru
@@ -61,8 +61,8 @@ services:
         environment:
             PMA_ARBITRARY: 1
             PMA_HOST: mysql8-service
-            PMA_USER: ddalee
-            PMA_PASSWORD: ddaleepwd
+            #PMA_USER: ddalee
+            PMA_PASSWORD: camagru
             UPLOAD_LIMIT: 20M
         networks: 
             - camagru
