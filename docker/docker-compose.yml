@@ -64,5 +64,7 @@ services:
             PMA_USER: chilee
             PMA_PASSWORD: pwd
             UPLOAD_LIMIT: 20M
+        networks:
+            - camagru
         ports:
             - 8899:80
