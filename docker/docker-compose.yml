@@ -6,7 +6,7 @@ networks:
 services:
 
     # nginx
-    nginx-service:
+    nginx:
         image: nginx:stable-alpine
         container_name: nginx-container
         ports:
@@ -15,13 +15,13 @@ services:
             - ../app:/var/www/project
             - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
-            - php74-service
-            - mysql8-service
+            - php
+            - mysql
         networks:
             - camagru
 
     # php
-    php74-service:
+    php:
         build:
             context: .
             dockerfile: ./php/Dockerfile
@@ -31,12 +31,12 @@ services:
         volumes:
             - ../app:/var/www/project
         depends_on:
-            - mysql8-service
+            - mysql
         networks:
             - camagru
 
     # mysql
-    mysql8-service:
+    mysql:
         image: mysql:8
         container_name: mysql8-container
         expose:
@@ -60,7 +60,7 @@ services:
         container_name: phpmyadmin
         environment:
             PMA_ARBITRARY: 1
-            PMA_HOST: mysql8-service
+            PMA_HOST: mysql
             PMA_USER: ddalee
             PMA_PASSWORD: hello
             UPLOAD_LIMIT: 20M
@@ -69,6 +69,6 @@ services:
         volumes:
             - ./mysql:/var/lib/mysql
         depends_on: 
-            - mysql8-service
+            - mysql
         ports:
             - 8899:80
