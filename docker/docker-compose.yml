@@ -48,25 +48,27 @@ services:
         environment: 
             MYSQL_ROOT_PASSWORD: camagru
             MYSQL_DATABASE: camagru
-            MYSQL_USER: myuser
-            MYSQl_PASSWORD: myuserpwd
+            MYSQL_USER: ddalee
+            MYSQl_PASSWORD: hello
 
         networks:
             - camagru
     
     # phpmyadmin
     phpmya:
-        image: phpmyadmin/phpmyadmin:latest
+        images: phpmyadmin:latest
         container_name: phpmyadmin
         environment:
             PMA_ARBITRARY: 1
             PMA_HOST: mysql8-service
-            PMA_USER: myuser
-            PMA_PASSWORD: myuserpwd
+            PMA_USER: ddalee
+            PMA_PASSWORD: hello
             UPLOAD_LIMIT: 20M
         networks:
             - camagru
         volumes:
             - ./mysql:/var/lib/mysql
+        depends_on: 
+            - mysql8-service
         ports:
             - 8899:80
