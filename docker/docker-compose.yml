@@ -46,10 +46,10 @@ services:
         command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci    
         restart: always # always restart unless stopped manually
         environment: 
-            MYSQL_ROOT_PASSWORD: pwd
+            MYSQL_ROOT_PASSWORD: camagru
             MYSQL_DATABASE: camagru
-            MYSQL_USER: chilee
-            MYSQl_PASSWORD: pwd
+            MYSQL_USER: myuser
+            MYSQl_PASSWORD: myuserpwd
 
         networks:
             - camagru
@@ -61,10 +61,12 @@ services:
         environment:
             PMA_ARBITRARY: 1
             PMA_HOST: mysql8-service
-            PMA_USER: chilee
-            PMA_PASSWORD: pwd
+            PMA_USER: myuser
+            PMA_PASSWORD: myuserpwd
             UPLOAD_LIMIT: 20M
         networks:
             - camagru
+        volumes:
+            - ./mysql:/var/lib/mysql
         ports:
             - 8899:80
