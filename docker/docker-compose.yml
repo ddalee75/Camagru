@@ -63,7 +63,7 @@ services:
             PMA_HOST: mysql8-service
             PMA_USER: ddalee
             PMA_PASSWORD: ddaleepwd
-        UPLOAD_LIMIT: 20M
+            UPLOAD_LIMIT: 20M
         networks: 
             - camagru
         ports:
