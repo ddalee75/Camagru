@@ -9,31 +9,35 @@
 </head>
 <body>
     
-        
+
     <div class="bloc1">
+        <div class="logo">
+            <img src="./common/img/logo.png" width="300px">
+        </div>
         <div class="login">
             <h3>LOGIN</h3>
             <p>Please login if you have an account!</p>
             <form action="models/login.php" method="post">
-                <input type="text" name="uid" placeholder="Username"><br>
+                <input type="text" name="uid" placeholder="User name"><br>
                 <input type="password" name="pwd" placeholder="Password">
                 <br>
-                <button type="submit" name="submit">LOGIN</button>
+                <div class="bn"><button type="submit" name="submit">LOGIN</button></div>
             </form>
         </div>
         <div class="signup">
             <h3>SIGN UP</h3>
             <p>Don't have an account yet?<br> Sign up here!</p>
-            <from action="models/signup.php" method="post"><br>
-                <input type="text" name="uid" placeholder="Username"><br>
+            <from action="models/signup.php" method="post">
+                <input type="text" name="uid" placeholder="User name"><br>
                 <input type="password" name="pwd" placeholder="Password"><br>
                 <input type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
                 <input type="text" name="email" placeholder="E-mail">
                 <br>
-                <button type="submit" name="submit">SIGN UP</button>
+                <div class="bn"><button type="submit" name="submit">SIGN UP</button></div>
             </from>
         </div>
     </div>
+
       
   
 

@@ -1,38 +1,80 @@
 body, html {
     height: 100%;
     margin: 0px;
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/accueil.jpg");
     height: 100vh;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     justify-content: end;
     align-items: center;
-   
 }
 
 .bloc1{
-    
-    
-    margin-top: 100px;
-    margin-right: 100px ;
+    display: flex;
+    margin-top: 5%;
+    margin-right: 50% ; 
     flex-direction: column;
-   
+    align-items: center;  
+}
+
+.logo{
+    margin-bottom: 30px;
+    border-radius: 10px;
+
 }
 
 .login{
+   
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.705);
+    background-color: rgb(208, 214, 223);
     width: 250px;
-
 }
 
 .signup{
     color: azure;
     padding: 20px;
-    background-color: rgba(34, 3, 32, 0.651);
+    background-color: rgb(58, 4, 54);
     width: 250px;
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+button[type=submit] {
+  
+    width: 60%;
+    background-color: rgb(40, 81, 156);
+    color: white;
+    padding: 14px 20px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.bn{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+input[type=text]{
+    width: 100%;
+    padding: 4px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border: 0;
+}
+
+input[type=password]{
+    width: 100%;
+    padding: 4px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border: 0;
 }
