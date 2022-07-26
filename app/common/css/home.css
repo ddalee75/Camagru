@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     margin: 0px;
-    background-image: url("../img/accueil.jpg");
+    background-image: url("../img/accueil1.jpg");
     height: 100vh;
     background-attachment:fixed;
     background-position: center;
@@ -17,12 +17,14 @@ body, html {
     margin-top: 5%;
     margin-right: 50% ; 
     flex-direction: column;
-    align-items: center;  
+    align-items: center; 
+
 }
 
 .logo{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    background-color: #f6f6f6;
 
 }
 
@@ -31,6 +33,7 @@ body, html {
     padding: 20px;
     background-color: rgb(208, 214, 223);
     width: 250px;
+    border-radius: 10px;
 }
 
 .signup{
@@ -39,18 +42,21 @@ body, html {
     background-color: rgb(58, 4, 54);
     width: 250px;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 button[type=submit] {
   
-    width: 60%;
+    width: 50%;
     background-color: rgb(40, 81, 156);
     color: white;
     padding: 14px 20px;
     margin: 4px 0;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
+
+
 }
 
 .bn{
@@ -69,6 +75,7 @@ input[type=text]{
     margin-top: 1px;
     margin-bottom: 1px;
     border: 0;
+    border-radius: 5px;
 }
 
 input[type=password]{
@@ -77,4 +84,5 @@ input[type=password]{
     margin-top: 1px;
     margin-bottom: 1px;
     border: 0;
+    border-radius: 5px;
 }
