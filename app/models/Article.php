@@ -16,11 +16,11 @@ class Article
     // hydratation
     public function hydrate(array $data)
     {
-        foreach($data as $key => value)
+        foreach($data as $key => $value)
             $method = 'set'.ucfirst($key);
 
             if (method_exists($this, $method))
-                $this->method($value);
+                $this->$method($value);
     }
 
     //setters
@@ -40,16 +40,16 @@ class Article
 
     public function setContent($content)
     {
-        if(is string($content))
+        if(is_string($content))
             $this->_content = $content;
     }
 
     public function setDate($date)
     {
-        $this->_data = $data;
+        $this->_date = $date;
     }
 
-    ?? Getters
+    // Getters
     public function id()
     {
         return $this->_id;
@@ -67,6 +67,6 @@ class Article
 
     public function date()
     {  
-        return $this->date
+        return $this->_date;
     }
 }

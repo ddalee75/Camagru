@@ -3,7 +3,7 @@ class ArticleManager extends Model
 {
     public function getArticles()
     {
-        $this->getBdd();
+        // $this->getBdd();
         return $this->getAll('articles', 'Article');
     }
 }
