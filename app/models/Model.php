@@ -7,8 +7,7 @@ abstract class Model
     // Instancie la connextion a la BDD
     private static function setBdd()
     {
-        self::$_bdd= new PDO('mysql:host=mysql8-container;dbname=camagru_DB;charset=utf8', 
-        'root', 'camagru');
+        self::$_bdd= new PDO('mysql:host=mysql8-container;dbname=camagru_DB;charset=utf8', 'root', 'camagru');
         self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     }
     //Recupere la connextion a la BDD

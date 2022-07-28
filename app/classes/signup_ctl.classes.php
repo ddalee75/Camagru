@@ -1,6 +1,6 @@
 <?php
 
-class SignupContr 
+class SignupContr extends Signup
 {
     private $uid; 
     private $pwd; 
@@ -62,7 +62,7 @@ class SignupContr
     private function pwdMatch()
     {
         $result;
-        if($this->pwd !== $this->.pwdRepeat)
+        if($this->pwd !== $this->pwdRepeat)
         {
             $result = false;
         }
@@ -76,7 +76,7 @@ class SignupContr
     private function uidTakenCheck()
     {
         $result;
-        if(!$this->checkUser($this->$uid, $this->$email))
+        if(!$this->checkUser($this->uid, $this->email))
         {
             $result = false;
         }
@@ -87,7 +87,7 @@ class SignupContr
         return $result;
     }
 
-    private function signupUser()
+    public function signupUser()
     {
         if($this->emptyInput() == false)
         {
@@ -124,6 +124,6 @@ class SignupContr
             exit();
         }
 
-        $this->setUser();
+        $this->setUser($this->uid, $this->pwd, $this->email);
     }
 }

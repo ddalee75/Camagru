@@ -26,4 +26,21 @@ class Signup extends Dbh
         
         return $resultCheck;
     }
+
+    protected function setUser($uid, $pwd, $email)
+    {
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?, ?, ?);');
+
+        //checker password avant inserer les datas
+        //Crée une clé de hachage pour un mot de passe
+        $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+
+        if(!$stmt->execute(array($uid, $hashedPwd, $email)))
+        {
+            $stmt = null;
+            header("location: ../index.php?error=stmtfailed");
+        }
+        
+        $stmt = null;
+    }
 }
