@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,20 @@
     <title>Chilee's Camagru</title>
 </head>
 <body>
-    
+
     <div class="bloc1">
+        <div class="stmt">
+        
+            <?php
+                if(isset($_SESSION["userid"]))
+                {
+            ?>
+               <p>welcome <?php echo $_SESSION["useruid"]; ?>  
+               <a href="includes/logout.inc.php" class="">LOGOUT</a></p>
+            <?php
+                }
+            ?>
+        </div>
         <div class="logo">
             <img src="./common/img/logo.png" width="300px">
         </div>

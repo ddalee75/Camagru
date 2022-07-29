@@ -5,13 +5,16 @@ class Login extends Dbh
 
     protected function getUser($uid, $pwd)
     {
-        $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ? OR Uusers_email = ?;');
+        $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ? OR users_email = ?;');
 
-        if(!$stmt->execute(array(array($uid, $pwd)))
+
+        if(!$stmt->execute(array($uid, $pwd)))
         {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
+            exit();
         }
+
 
         if($stmt->rowCount() == 0)
         {
@@ -47,7 +50,7 @@ class Login extends Dbh
                 exit();
             }
 
-            $user = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             session_start();
             $_SESSION["userid"] = $user[0]["users_id"];
@@ -56,7 +59,5 @@ class Login extends Dbh
             $stmt = null;
 
         }
-        
-        $stmt = null;
     }
 }

@@ -12,6 +12,13 @@ body, html {
     align-items: center;
 }
 
+.stmt{
+    font-size: larger;
+    background-color: bisque;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 .bloc1{
     display: flex;
     margin-top: 5%;

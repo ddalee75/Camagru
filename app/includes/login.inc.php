@@ -1,5 +1,5 @@
-
 <?php
+
 //Grabbing the data
 if(isset($_POST["submit"]))
 {
@@ -18,5 +18,5 @@ if(isset($_POST["submit"]))
     $login->loginUser();
     
 // Going to back to front page
-    header("location: ../index.php?error=none");
+    header ("location: ../index.php?login=ok");
 }
