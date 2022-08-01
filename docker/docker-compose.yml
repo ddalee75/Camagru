@@ -31,6 +31,10 @@ services:
             - "9000"
         volumes:
             - ../app:/var/www/project
+            - ./php/msmtp/msmtprc:/etc/msmtprc:ro
+            # - ./php/ssmtp/ssmtp.conf:/etc/msmtprc:ro
+            # - ./php/ssmtp/revaliases:/etc/ssmtp/revaliases:ro
+            # - ./php/ssmtp/php-sendmail.ini:/usr/local/etc/php/conf.d/php-sendmail.ini:ro
         depends_on:
             - mysql8-service
         restart: always

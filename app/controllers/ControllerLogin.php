@@ -3,7 +3,6 @@
 //Grabbing the data
 if(isset($_POST["submit"]))
 {
-    
     $uid = $_POST["uid"];
     $pwd = $_POST["pwd"];
 
@@ -16,7 +15,6 @@ if(isset($_POST["submit"]))
 // Running error handlers and user signup
 
     $login->loginUser();
-    
-// Going to back to front page
-    header ("location: ../index.php?login=ok");
+    require_once('../views/viewHome.php');
+
 }

@@ -1,8 +1,7 @@
 <?php
-class ControllerAccueil
+class ControllerHome
 {
-    private $_destination;
-//    private $_view;
+//    private $_destination;
 
    public function __construct($url)
    {
@@ -14,10 +13,9 @@ class ControllerAccueil
 
    private function destination()
    {
-        // $this->_articleManager = new ArticleManager;
-        // $articles = $this->_articleManager->getArticles();
 
-        require_once('./views/viewAccueil.php');
+         require_once('./views/viewHome.php');
+
    }
 
  }

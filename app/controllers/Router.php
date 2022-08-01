@@ -9,10 +9,10 @@ class Router{
     {
         try
         {
-            //Chargement automqtique des Classes (que du dossier "models")
-            spl_autoload_register(function($class){
-                require_once('models/'.$class.'.php');
-            });
+            // //Chargement automqtique des Classes (que du dossier "models")
+            // spl_autoload_register(function($class){
+            //     require_once('models/'.$class.'.php');
+            // });
 
             $url= '';
 
@@ -32,7 +32,7 @@ class Router{
                     $this->_ctrl = new $controllerClass($url);
                 }
                 else 
-                    throw new Exception('Page not found');
+                    throw new Exception('Page not found !!!');
             }
             else
             {

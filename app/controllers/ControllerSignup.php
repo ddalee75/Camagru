@@ -19,5 +19,7 @@ if(isset($_POST["submit"]))
     $signup->signupUser();
     
 // Going to back to front page
-    header("location: ../index.php?error=none");
+    // header("location: ../index.php?error=none");
+
+  require_once('../views/viewLogin.php');
 }

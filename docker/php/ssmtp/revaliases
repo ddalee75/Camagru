@@ -1,0 +1,8 @@
+# sSMTP aliases
+# spécifier quel compte SMTP doit être utilisé pour tel ou tel utilisateur sur la machine:
+# Format:	local_account:outgoing_address:mailhub
+#
+# Example: root:your_login@your.domain:mailhub.your.domain[:port]
+# where [:port] is an optional port number that defaults to 25.
+root:thomaslemp75@gmail.com:smtp.gmail.com:587
+chilee42:thomaslemp75@gmail.com:smtp.gmail.com:587
