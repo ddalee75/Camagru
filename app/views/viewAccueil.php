@@ -40,6 +40,7 @@
             </form>
         </div>
         <div class="signup">
+            
             <h3>SIGN UP</h3>
             <p>Don't have an account yet?<br> Sign up here!</p>
             <form action="./controllers/ControllerSignup.php" method="post">

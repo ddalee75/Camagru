@@ -29,18 +29,51 @@ class Signup extends Dbh
 
     protected function setUser($uid, $pwd, $email)
     {
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email) VALUES (?, ?, ?);');
+        // generer token pour confirmation email
+        function getToken($len=32)
+        {
+            return substr(md5(openssl_random_pseudo_bytes(20)), -$len);
+        }
+        $newToken = getToken(10);        
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email, users_token) VALUES (?, ?, ?, ?);');
 
         //checker password avant inserer les datas
         //Crée une clé de hachage pour un mot de passe
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if(!$stmt->execute(array($uid, $hashedPwd, $email)))
+        if(!$stmt->execute(array($uid, $hashedPwd, $email, $newToken)))
         {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
         }
         
+
         $stmt = null;
     }
+
+    // protected function confirmEmail()
+    // {
+        // echo "hello" | mail -s "confirmation" ddalee75@gmail.com
+        //     // Deux destinataires séparés par une virgule. 
+        // $destinataires = "ddalee75@gmail"; 
+
+        // // Objet. 
+        // $objet = "Confirm your email"; 
+
+        // // Message. 
+        // $message = $uid; 
+        // $message .= "Please click the link to confirm your email\n"; 
+        // $message .= "la formation Développement Facile.\n"; 
+     
+
+
+        // // En-têtes supplémentaires. 
+        // $entêtes = "From: 'Inscription' <admin@camagru.42.fr>\n"; 
+        // $entêtes .= "Do not reply"; 
+        // $entêtes .= "X-Priority: 1\n"; 
+
+        // // Envoi. 
+        // $bEnvoie = mail($destinataires,$objet,$message,$entetes); 
+       
+    // }
 }
