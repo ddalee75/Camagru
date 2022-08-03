@@ -47,33 +47,17 @@ class Signup extends Dbh
             header("location: ../index.php?error=stmtfailed");
         }
         
+        $to_email = $email;
+        $subject = 'Testing PHP Mail';
+        $message = 'This mail is sent using the PHP mail function';
+        $headers = 'From: noreply @ company . com';
+        mail($to_email,$subject,$message,$headers);
 
         $stmt = null;
     }
 
-    // protected function confirmEmail()
-    // {
-        // echo "hello" | mail -s "confirmation" ddalee75@gmail.com
-        //     // Deux destinataires séparés par une virgule. 
-        // $destinataires = "ddalee75@gmail"; 
-
-        // // Objet. 
-        // $objet = "Confirm your email"; 
-
-        // // Message. 
-        // $message = $uid; 
-        // $message .= "Please click the link to confirm your email\n"; 
-        // $message .= "la formation Développement Facile.\n"; 
-     
+    
+    
 
 
-        // // En-têtes supplémentaires. 
-        // $entêtes = "From: 'Inscription' <admin@camagru.42.fr>\n"; 
-        // $entêtes .= "Do not reply"; 
-        // $entêtes .= "X-Priority: 1\n"; 
-
-        // // Envoi. 
-        // $bEnvoie = mail($destinataires,$objet,$message,$entetes); 
-       
-    // }
 }

@@ -18,8 +18,8 @@
             <img src="../common/img/logo.png" width="300px">
         </div>
         <div class="login">
-            <h3>Please LOGIN</h3>
-            <p>Thank you for registering</p>
+            <h3>LOGIN</h3>
+            <p>Please confirm first your email !!!</p>
             <form action="../controllers/ControllerLogin.php" method="post">
                 <input type="text" name="uid" placeholder="User name"><br>
                 <input type="password" name="pwd" placeholder="Password">
