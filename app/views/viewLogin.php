@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start(); 
 ?> 
 
@@ -19,7 +19,7 @@ session_start();
         </div>
         <div class="login">
             <h3>LOGIN</h3>
-            <p>Please confirm first your email !!!</p>
+            <p>Please confirm your email first!!!</p>
             <form action="../controllers/ControllerLogin.php" method="post">
                 <input type="text" name="uid" placeholder="User name"><br>
                 <input type="password" name="pwd" placeholder="Password">
@@ -35,4 +35,4 @@ session_start();
   
 
 </body>
-</html> -->
+</html>

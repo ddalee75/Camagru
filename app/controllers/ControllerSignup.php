@@ -18,9 +18,9 @@ if(isset($_POST["submit"]))
 // Running error handlers and user signup
 
     $signup->signupUser();
-
+    
     $confirm = new ConfirmEmail();
-    $confirm->send_activation_email();
+    $confirm->send_activation_email($uid);
     
     
 // Going to back to front page
