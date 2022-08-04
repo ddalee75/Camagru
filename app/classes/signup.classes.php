@@ -45,19 +45,13 @@ class Signup extends Dbh
         {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
-        }
-        
-        $to_email = $email;
-        $subject = 'Testing PHP Mail';
-        $message = 'This mail is sent using the PHP mail function';
-        $headers = 'From: noreply @ company . com';
-        mail($to_email,$subject,$message,$headers);
-
+        }    
         $stmt = null;
     }
 
-    
-    
-
-
 }
+
+    
+    
+
+

@@ -2,20 +2,26 @@
 
 class Dbh 
 {
+    private $host = "mysql8-container";
+    private $dbname = "camagru_DB";
+    private $username = "root";
+    private $password = "camagru";
+
     protected function connect()
     {
         try
         {
-            $username= "root";
-            $password = "camagru";
-            $dbh = new PDO('mysql:host=mysql8-container;dbname=camagru_DB', $username, $password);
+            
+            $dbh = new PDO('mysql:host=' .$this->host. ';dbname=' .$this->dbname, $this->username, $this->password);
+            $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             return $dbh;
 
         }
         catch (PDOException $e)
         {
-              print "Error!: " . $e->getmessage() . "<br/>";
+              print "Error! Probleme de connection Database !!: " . $e->getmessage() . "<br/>";
               die();  
         }
     }
+   
 }

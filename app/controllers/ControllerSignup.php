@@ -12,14 +12,17 @@ if(isset($_POST["submit"]))
     include "../classes/dbh.classes.php";
     include "../classes/signup.classes.php";
     include "../classes/signup_ctl.classes.php";
+    include "../classes/confirm_email.classes.php";
     $signup = new SignupContr($uid, $pwd, $pwdRepeat, $email);
 
 // Running error handlers and user signup
 
     $signup->signupUser();
+
+    $confirm = new ConfirmEmail();
+    $confirm->send_activation_email();
+    
     
 // Going to back to front page
-    // header("location: ../index.php?error=none");
-
   require_once('../views/viewLogin.php');
 }
