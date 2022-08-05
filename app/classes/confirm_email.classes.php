@@ -39,7 +39,7 @@ class ConfirmEmail extends Dbh
                 $activation_link
                 MESSAGE;
         // email header
-        $header = "From:" . $SENDER_EMAIL_ADDRESS;
+        $header .= "From:" . $SENDER_EMAIL_ADDRESS;
     
         // send the email
         mail($email, $subject, nl2br($message), $header);

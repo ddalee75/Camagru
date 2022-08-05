@@ -1,7 +1,7 @@
 <?php
 
 //Grabbing the data
-if(isset($_POST["submit"]))
+if(isset($_POST["submit_login"]))
 {
     $uid = $_POST["uid"];
     $pwd = $_POST["pwd"];
