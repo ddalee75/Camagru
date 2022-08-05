@@ -38,7 +38,6 @@ $token = $_GET["activation_code"];
 $active = new ActivationEmail();
 $active->activation($email, $token);
 
-?>
+require_once('../views/viewAfterconfirm.php');
 
-<p>"Your email has been confirmed !!"<p><br>
-<a href="http://localhost/views/viewLogin.php">Login now</a>
+?>

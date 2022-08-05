@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     margin: 0px;
-    background-image: url("https://cdn.pixabay.com/photo/2014/04/05/09/30/tablet-314153_960_720.png");
+    /* background-image: url("https://cdn.pixabay.com/photo/2014/04/05/09/30/tablet-314153_960_720.png"); */
     height: 100vh;
     background-attachment:fixed;
     background-position: center;
@@ -11,3 +11,4 @@ body, html {
     justify-content: end;
     align-items: center;
 }
+

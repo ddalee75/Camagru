@@ -1,0 +1,43 @@
+body, html {
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.group{
+    width: 300px;
+    flex-direction: column;
+   
+}
+.logo{
+
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+}
+
+.bloc{
+    margin-top: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    text-align: center;
+    color: brown;
+    
+}
+
+.btn{
+    border: 0;
+    line-height: 3;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgb(40, 81, 156);
+}
+
+.btn:hover {
+    background-color: #45a049;
+}

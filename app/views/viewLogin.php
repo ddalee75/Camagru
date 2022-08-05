@@ -18,15 +18,14 @@ session_start();
             <img src="../common/img/logo.png" width="300px">
         </div>
         <div class="login">
-            <h3>LOGIN</h3>
-            <p>Please confirm your email first!!!</p>
-            <form action="../controllers/ControllerLogin.php" method="post">
-                <input type="text" name="uid" placeholder="User name"><br>
-                <input type="password" name="pwd" placeholder="Password">
-                <br>
+            <h3>Confirm email has been send to you !</h3>
+            <p>Please activate your email first !!!</p>
+            <form action="http://localhost/index.php" method="post">
+                
                 <div class="bn"><button type="submit" name="submit">LOGIN</button></div>
             </form>
         </div>
+       
        
     </div>    
 

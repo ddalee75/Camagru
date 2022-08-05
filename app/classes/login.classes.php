@@ -2,7 +2,7 @@
 
 class Login extends Dbh 
 {
-
+    
     protected function getUser($uid, $pwd)
     {
         $stmt = $this->connect()->prepare('SELECT users_pwd FROM users WHERE users_uid = ? OR users_email = ?;');
@@ -49,8 +49,21 @@ class Login extends Dbh
                 header("location: ../index.php$error=usernotfound");
                 exit();
             }
+          
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            $checktoken = $user[0]["users_confirm"];
+            
+            if (!$checktoken == 1)
+            {
+                $stmt =null;
+              
+                header("location: ../index.php?error=ConfirmEmailFirst");
+                // echo '<script>alert("Confirm your email first")</script>'; 
+             
+               
+            }
 
             session_start();
             $_SESSION["userid"] = $user[0]["users_id"];
