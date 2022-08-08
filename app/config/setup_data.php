@@ -17,7 +17,9 @@ try {
   users_email TINYTEXT NOT NULL,
   users_token VARCHAR(20) NOT NULL,
   users_confirm INT NOT NULL DEFAULT '0',
-  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  pwd_token VARCHAR(20) NOT NULL,
+  pwd_ask_date TIME
   )";
 
   // use exec() because no results are returned

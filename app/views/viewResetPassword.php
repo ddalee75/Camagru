@@ -12,26 +12,41 @@
     <div class="group">
 
         <div class="logo">
+        
             <img src="http://localhost/common/img/logo.png" width="300px">
         </div>
         <div class="login">
         <center><h3>Reset your password</h3>
             <p>Please enter your email!</p></center>
-            <form action="http://localhost/controllers/ControllerResetpwd.php" method="post">
-                <input type="text" name="email" placeholder="your email"><br>
-                
+            <form action="http://localhost/classes/reset_password.classes.php" method="post">
+                <input type="text" name="verify_email" placeholder="your email"><br>
                 <div class="bn"><button type="submit" name="reset_pwd">Reset</button></div>
             </form>
         </div>
-        
-        
-        
-        
+        <div class="message">
+            <?php 
+                    if(isset($_GET["error"]))
+                    {
+                        if($_GET["error"] == "CheckYourEmail"){
+                            echo 'Please check your Email';
+                        }
+                        if($_GET["error"] == "EmailNotFound"){
+                            echo 'No this user';
+                        }
+                  
+                        if($_GET["error"] == "PleaseInputEmail"){
+                            echo 'Please Input Your email';
+                        }
+                        
+                        if($_GET["error"] == "TokenExpire"){
+                            echo 'Token Expire, please resend the request';
+                        }
+                        
+                    }
+            ?>
+        </div>
+     
     </div>    
-
-
-      
-  
 
 </body>
 </html>
