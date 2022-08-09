@@ -42,6 +42,9 @@
                             echo 'Token Expire, please resend the request';
                         }
                         
+                        if($_GET["error"] == "TokenOrEmailNoMatch"){
+                            echo 'Token or Email not match, please resend the request';
+                        }
                     }
             ?>
         </div>

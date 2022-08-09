@@ -33,11 +33,11 @@ class ResetPassword extends Dbh
 
                     // Envoie email
                     $email= $_POST['verify_email'];
-                    $APP_URL = 'http://localhost/classes';
+                    $APP_URL = 'http://localhost/';
                     $SENDER_EMAIL_ADDRESS = 'no-reply@camagru42.fr';
         
                     // create the activation link
-                    $activation_link = $APP_URL . "/reset_password_etape2.classes.php?email=$email&activation_code=$TokenPWD";
+                    $activation_link = $APP_URL . "index.php?url=Createnewpassword&email=$email&activation_code=$TokenPWD";
                 
                     // set email subject & body
                     $subject = 'Please Reset Your Password';
