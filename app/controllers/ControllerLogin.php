@@ -15,6 +15,7 @@ if(isset($_POST["submit_login"]))
 // Running error handlers and user signup
 
     $login->loginUser();
-    require_once('../views/viewHome.php');
+    // require_once('../views/viewHome.php');
+    header("location: ../index.php?url=Home");
 
 }

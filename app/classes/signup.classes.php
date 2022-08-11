@@ -49,7 +49,7 @@ class Signup extends Dbh
         }    
         $stmt = null;
     }
-
+    
 }
 
     

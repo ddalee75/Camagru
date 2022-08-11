@@ -32,8 +32,10 @@ class Login extends Dbh
             header("location: ../index.php?error=worngpassword");
             exit();
         }
-        elseif($checkPwd == true)
+      
+        else if($checkPwd == true)
         {
+            
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
 
             if(!$stmt->execute(array($uid, $uid, $pwd)))
@@ -46,23 +48,18 @@ class Login extends Dbh
             if($stmt->rowCount() == 0)
             {
                 $stmt = null;
-                header("location: ../index.php$error=usernotfound");
+                header("location: ../index.php$error=usernotfound1");
                 exit();
             }
-          
-
+            
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
             $checktoken = $user[0]["users_confirm"];
-            
+
             if (!$checktoken == 1)
             {
-                $stmt =null;
-              
+                $stmt = null;
                 header("location: ../index.php?error=ConfirmEmailFirst");
-                // echo '<script>alert("Confirm your email first")</script>'; 
-             
-               
+                exit();
             }
 
             session_start();
@@ -70,7 +67,7 @@ class Login extends Dbh
             $_SESSION["useruid"] = $user[0]["users_uid"];
 
             $stmt = null;
-
+            
         }
     }
 }

@@ -8,16 +8,16 @@
     <title>Chilee's Camagru</title>
 </head>
 <body>
-
+    <div class="all">
     <div class="group">
 
         <div class="logo">
         
-            <img src="http://localhost/common/img/logo.png" width="300px">
+            <center><img src="http://localhost/common/img/logo.png" width="300px"></center>
         </div>
         <div class="login">
         <center><h3>Reset your password</h3>
-            <p>Please enter your email!</p></center>
+            <p>Please enter your email!</p></center><br>
             <form action="http://localhost/classes/reset_password.classes.php" method="post">
                 <input type="text" name="verify_email" placeholder="your email"><br>
                 <div class="bn"><button type="submit" name="reset_pwd">Reset</button></div>
@@ -49,7 +49,8 @@
             ?>
         </div>
      
-    </div>    
+    </div>  
+    </div>  
 
 </body>
 </html>

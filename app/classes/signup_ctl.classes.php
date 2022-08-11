@@ -43,6 +43,24 @@ class SignupContr extends Signup
         return $result;
     }
 
+    //checker si au moin 1 majuscule dans le password
+    private function passwordSecurity() 
+    {
+        $uppercase = preg_match('@[A-Z]@', $this->pwd);
+           
+        $result;
+        if (!$uppercase)
+        {
+            $result =false;
+        }
+        else
+        {
+            $result = true;
+        }
+        return $result;
+    }
+
+
     // checker si email est bien valide
     private function invalidEmail()
     {
@@ -121,6 +139,13 @@ class SignupContr extends Signup
         {
             // echo "Username ou Email taken!";
             header("location: ../index.php?error=useroremailtaken");
+            exit();
+        }
+
+        if($this->passwordSecurity() == false)
+        {
+            // echo "have One capital letter please";
+            header("location: ../index.php?error=passwordnotstrong");
             exit();
         }
 

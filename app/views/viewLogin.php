@@ -8,14 +8,14 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../common/css/home.css">
+    <link rel="stylesheet" href="../common/css/login.css">
     <title>Chilee's Camagru</title>
 </head>
 <body>
-
-    <div class="bloc1">
+<div class="all">
+    <div class="global">
         <div class="logo">
-            <img src="../common/img/logo.png" width="300px">
+            <center><img src="../common/img/logo.png" width="300px"></center>
         </div>
         <div class="login">
             <h3>Confirm email has been send to you !</h3>
@@ -28,6 +28,7 @@ session_start();
        
        
     </div>    
+</div>
 
 
       

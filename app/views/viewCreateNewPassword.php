@@ -8,7 +8,7 @@
     <title>Chilee's Camagru</title>
 </head>
 <body>
-
+<div class ="all">
     <div class="group">
 
         <div class="logo">
@@ -24,6 +24,7 @@
                 exit();
             }
         ?>
+
         <div class="login">
         <center><h3>Reset your new password</h3></center>
            
@@ -36,6 +37,7 @@
                 <div class="bn"><button type="submit" name="reset_submit">Create</button></div>
             </form>
         </div>
+        
         <div class="message">
             <?php 
                    
@@ -46,10 +48,7 @@
                         }
                         if($_GET["error"] == "PasswordNotMatch"){
                             echo "Password don't match";
-                        }
-                        
-                        
-                        
+                        }               
                     }
             ?>
         </div>
@@ -58,7 +57,7 @@
         
         
     </div>    
-
+</div>
 
       
   
