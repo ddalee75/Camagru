@@ -32,7 +32,7 @@
                     if($_GET["error"] == "usernotfound"){
                         echo 'User not found';
                     }
-                    if($_GET["error"] == "worngpassword"){
+                    if($_GET["error"] == "wrongpassword"){
                         echo 'Worng password';
                     }
                     if($_GET["error"] == "stmtfailed"){

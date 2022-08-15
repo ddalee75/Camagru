@@ -1,12 +1,15 @@
-/* *{
+*{
    
     margin: 0px;
     box-sizing:border-box;
-    background-image: url("../img/accueil1.jpg");
+    
+    
+}
+body, html{
+    background-image: url("../img/home.jpg");
     height: 100vh;
     background-attachment:fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-} */
+}

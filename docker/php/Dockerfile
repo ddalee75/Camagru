@@ -7,6 +7,10 @@ RUN apt-get update && apt-get install -y zlib1g-dev g++ git libicu-dev zip libzi
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip
 
-WORKDIR /var/www/project
+WORKDIR /var/www/projet
+RUN chown www-data:www-data /var/www/projet
+RUN mkdir -p /var/www/projet/common/gallery
+RUN chown www-data /var/www/projet/common/gallery
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
