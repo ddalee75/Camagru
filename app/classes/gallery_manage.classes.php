@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../common/css/gallery.css">
-    <title>Chilee's Camagru</title>
-    
-</head>
-<body>
-<div class="gallery-container">
+
 <?php
 
 require_once('./classes/dbh.classes.php');
@@ -21,10 +10,14 @@ class GalleryManage extends Dbh
     $stmt = $this->connect()->query($sql);
     while($row =$stmt->fetch())
     {
-        echo '<a href="#">
+        echo '
+        <div class="img_bloc_gallery">
+        <a class="txt_color" href="../index.php?url=image&orderGallery='.$row["orderGallery"].'">
         <div class="photo_gallery" style="background-image: url('.$row["path"].');"></div>
         <h3>'.$row["nameGiven"].'</h3>
-        </a>';
+        </a>
+        </div>
+        ';
 
 
     }
@@ -32,5 +25,4 @@ class GalleryManage extends Dbh
 
 }
 ?>
-</div>
-</body>
+

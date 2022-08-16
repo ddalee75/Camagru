@@ -33,7 +33,7 @@
                         echo 'User not found';
                     }
                     if($_GET["error"] == "wrongpassword"){
-                        echo 'Worng password';
+                        echo 'Wrong password';
                     }
                     if($_GET["error"] == "stmtfailed"){
                         echo 'Statment failed';

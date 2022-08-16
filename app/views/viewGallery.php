@@ -6,20 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/gallery.css">
+   
     <title>Chilee's Camagru</title>
     
 </head>
 <body>
-<div class="all">
+<div class="all_gallery">
   <div class="upload">
               <form action="../classes/gallery.classes.php" method="POST" enctype="multipart/form-data">
-                  <input type="text" name="filename" placeholder="File name">
-                  <input type="file" name="file">
-                  <button type="submit" name="submit_upload">Upload</button>
+                  <input class="input_txt_gallery" type="text" name="filename" placeholder="File name">
+                  <input class="input_txt_gallery2" type="file" name="file">
+                  <button class="bn_gallery" type="submit" name="submit_upload">Upload</button>
+        
               </form>
-              <?php 
+            
+              
+              
+  </div>
+  <div class="message_gallery">
+  <?php 
                       if(isset($_GET["error"])){
                           if($_GET["error"] == "TypeNotCorrect"){
+                             
                               echo 'Only jpg, png and pdf file, please';
                           }
                           if($_GET["error"] == "NoFile"){
@@ -38,13 +46,13 @@
                             echo 'An error when upload';
                           }
                         }
-              ?>
-  </div>
+                        ?>
+</div>                        
   
   <div class = "gallery">
     <div class = "gallery-container">
               
-
+    
           <?php
           require_once('./classes/dbh.classes.php');
           require_once('./classes/gallery_manage.classes.php');
@@ -54,8 +62,7 @@
           ?> 
 
 
-          
-    </div>
+                   
      
   </div>
 

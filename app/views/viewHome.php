@@ -11,6 +11,16 @@
 </head>
 <body>
 <div class="all_home">
+    <div class="photomaton_home">
+    <a class="btn_play1" href="#"></a>
+       
+    </div>
+
+    <div class="gallery_home">
+    <a class="btn_check1" href="../index.php?url=gallery" ></a>
+     
+    </div>
+   
    
 
 </div>
@@ -20,3 +30,4 @@
 
 </body>
 </html>
+<!-- <img src="../common/img/btn_play1.png"></img> -->

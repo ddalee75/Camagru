@@ -6,7 +6,8 @@
             {
         ?>
             <div class="logo_header">
-            <img src="http://localhost/common/img/logo.png" width="150px">
+            <a href="../index.php?url=home">
+            <img src="http://localhost/common/img/logo.png" width="150px"></a>
             <div class="nav_1_header">
           
             </div>

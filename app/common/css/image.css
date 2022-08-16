@@ -1,0 +1,55 @@
+*{
+    margin:0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color:rgb(230, 230, 230)
+}
+.all_image{
+    /* background-color: aqua; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.titre_image{
+    /* background-color: rgb(33, 83, 83); */
+    width: 60%;
+    height: 50px;
+    color: rgb(12, 107, 131);
+    text-align: center;
+    margin-top: 10px;
+    
+}
+
+.show_image{
+    /* background-color: rgb(102, 10, 74); */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.like_image{
+    width: 25%;
+    height:20px;
+    text-align: center;
+    background-color: aqua;
+}
+
+.comments_image{
+
+    background-color: blue;
+    width: 60%;
+    height: 300px;
+    
+}
+
+.show_comments{
+    background-color: rgb(131, 57, 109);
+    width: 60%;
+    height: 300px;
+    
+}

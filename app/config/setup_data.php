@@ -32,8 +32,19 @@ try {
       )";
   
 
-  // $query_gallery_seed = 
-  // "INSERT INTO gallery (imgFullNameGallery, path) VALUES ('logo, ../common/gallery/logo.png');";
+  $query_gallery_seed = 
+  "INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Advengers', 'gallery-advenger.png', '1', '../common/img/gallery-advenger.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Anniversaire', 'gallery-anniversaire.png', '2', '../common/img/gallery-anniversaire.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Cadre poto', 'gallery-cadre.png', '3', '../common/img/gallery-cadre.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Jaconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Time', 'gallery-time.png', '5', '../common/img/gallery-time.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Wanted', 'gallery-wanted.png', '7', '../common/img/gallery-wanted.png');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Sahara', 'dersert.jpg', '8', '../common/gallery/desert.jpg');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Etretat', 'etretat.jpg', '9', '../common/gallery/plage.jpg');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Plage', 'plage.jpg', '10', '../common/gallery/etretat.jpg');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Road', 'road.jpg', '11', '../common/gallery/road.jpg')";
+
 
 
 try{
@@ -44,8 +55,8 @@ try{
   $conn->exec($query_gallery);
   echo "Table gallery created successfully,";
 
-  // $conn->exec($query_gallery_seed);
-  // echo "Gallery insert successfully,";
+  $conn->exec($query_gallery_seed);
+  echo "Gallery insert successfully,";
 
 
 } catch (PDOException $e) {
