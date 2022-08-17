@@ -12,7 +12,7 @@ try {
 
   // sql to create table users
   $query_users = "CREATE TABLE IF NOT EXISTS users (
-    users_id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    users_id INT(11) AUTO_INCREMENT PRIMARY KEY,
     users_uid TINYTEXT NOT NULL,
     users_pwd LONGTEXT NOT NULL,
     users_email TINYTEXT NOT NULL,
@@ -28,7 +28,11 @@ try {
           nameGiven LONGTEXT not null,
           imgFullNameGallery LONGTEXT not null,
           orderGallery LONGTEXT not null,
-          path VARCHAR(1000) NOT NULL
+          path VARCHAR(1000) NOT NULL,
+          users_id INT(11), 
+          FOREIGN KEY (users_id) REFERENCES users(users_id)
+          
+
       )";
   
 
@@ -41,9 +45,18 @@ try {
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Wanted', 'gallery-wanted.png', '7', '../common/img/gallery-wanted.png');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Sahara', 'dersert.jpg', '8', '../common/gallery/desert.jpg');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Etretat', 'etretat.jpg', '9', '../common/gallery/plage.jpg');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Plage', 'plage.jpg', '10', '../common/gallery/etretat.jpg');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Plage', 'plage.jpg', '9', '../common/gallery/plage.jpg');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Etretat', 'etretat.jpg', '10', '../common/gallery/etretat.jpg');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Road', 'road.jpg', '11', '../common/gallery/road.jpg')";
+
+  $query_comment="CREATE TABLE IF NOT EXISTS comment(
+    id_comment INT AUTO_INCREMENT PRIMARY KEY,
+    postUser LONGTEXT NOT NULL,
+    postContent TEXT NOT NULL,
+    orderGallery LONGTEXT NOT NULL,
+    postDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    
+   )";
 
 
 
@@ -57,6 +70,10 @@ try{
 
   $conn->exec($query_gallery_seed);
   echo "Gallery insert successfully,";
+
+  $conn->exec($query_comment);
+  echo "Table comment created successfully,";
+
 
 
 } catch (PDOException $e) {

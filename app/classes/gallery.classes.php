@@ -5,8 +5,12 @@ class Gallery extends Dbh
 
   public function uploadImage()
   {
+  
     if (isset($_POST['submit_upload']))
     {
+      //recuperer userid pour savoir qui a poster la photo
+      $users_id = $_POST["userid"];
+     
       if (!empty($_POST['filename']))
       {
         if (!empty($_FILES)){
@@ -41,8 +45,8 @@ class Gallery extends Dbh
                 $imgFullName = $newName."_".uniqid('',true).".".$fileActualExt;
                 $path = "../common/gallery/".$imgFullName;
                 move_uploaded_file($fileTmpName,"../common/gallery/".$imgFullName);
-                
-            
+              
+                        
                 $sql = "SELECT * FROM gallery";
               
                 $stmt = $this->connect()->prepare($sql);
@@ -52,9 +56,9 @@ class Gallery extends Dbh
                 //  print_r($setImageOrder);
                 //  print_r($path);
 
-                $sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, orderGallery, path) VALUES(?, ?, ?, ?);";
+                $sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, orderGallery, path, users_id) VALUES(?, ?, ?, ?, ?);";
                 $stmt = $this->connect()->prepare($sql);
-                if(!$stmt->execute(array($nameGiven, $imgFullName, $setImageOrder, $path)))
+                if(!$stmt->execute(array($nameGiven, $imgFullName, $setImageOrder, $path, $users_id)))
                 {
                   $stmt = null;
                   header("location: ../index.php?url=galley&error=stmtfailed");

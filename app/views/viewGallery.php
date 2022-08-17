@@ -11,9 +11,13 @@
     
 </head>
 <body>
+  <!-- <?php 
+    print_r($_SESSION["userid"]);
+  ?> -->
 <div class="all_gallery">
   <div class="upload">
               <form action="../classes/gallery.classes.php" method="POST" enctype="multipart/form-data">
+                  <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"] ?>">
                   <input class="input_txt_gallery" type="text" name="filename" placeholder="File name">
                   <input class="input_txt_gallery2" type="file" name="file">
                   <button class="bn_gallery" type="submit" name="submit_upload">Upload</button>

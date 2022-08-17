@@ -10,58 +10,42 @@
 </head>
 
 <body>
+<div class="all_image">
 <?php
-$orderGallery= $_GET["orderGallery"];
-// print_r($orderGallery);
-require_once('./classes/dbh.classes.php');
-class ImageManage extends Dbh
-{
-    public function showImage($orderGallery)
-    {
-    $sql= "SELECT * FROM gallery WHERE orderGallery = '$orderGallery'" ;
-    
-    $stmt = $this->connect()->query($sql);
-    $row=$stmt->fetch();
+    $orderGallery= $_GET["orderGallery"];
+    require_once('./classes/image_manage.classes.php');
 
-echo '
-    <div class="all_image">
-        <div class="titre_image">
-            <h2> '.$row["nameGiven"].'</h2>
-        </div>
-
-        <div class="show_image">
-        <img src="'.$row["path"].'"></img>
-        </div>
-
-        <div class="like_image">
-        <p>Like</p>
-        </div>
+    $showImage = new ImageManage();
+    $showImage->showImage($orderGallery);
+?>
 
         <div class="comments_image">
         
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="../classes/image_form_manage.classes.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="orderGallery" value="<?php echo $orderGallery ?>">
-            <input class="input_txt_gallery" type="text" name="filename" placeholder="File name">
-            
-            <button class="bn_gallery" type="submit" name="submit_comments">Submit</button>
+            <input class="input_txt_gallery" type="text" name="name" placeholder="Your name" >
+            <textarea name="content" placeholder="Write your comment here..." required></textarea>
+            <button class="bn_gallery" type="submit" name="submit">Submit Comment</button>
 
-         </form>
+            </form>
 
-
+            <?php 
+                if(isset($_GET["error"])){
+                   
+                    if($_GET["error"] == "emptyUserName"){
+                        echo 'Please Enter your Name !';
+                    }
+                    if($_GET["error"] == "imageError"){
+                        echo 'Image error, please return to gallery !';
+                    }
+                    if($_GET["error"] == "commentSucess"){
+                        echo 'comment posted';
+                    }
+                }
+            ?>        
         </div>
-        <div class="show_comments">
-        </div>
 
-
-    </div>
-    ';
-    }
-}    
-        $showImage = new ImageManage();
-        $showImage->showImage($orderGallery);
-          ?> 
-
-
-    ?>
+        
+ </div>
 </body>
 </html>
