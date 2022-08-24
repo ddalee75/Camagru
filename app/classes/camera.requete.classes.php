@@ -1,14 +1,14 @@
 <?php 
-
+// print_r($_POST['layerSrc']);
 //Recuperer image et merge avec filtre
-if(!empty($_FILES['image_a'])){
-
+if(!empty($_FILES['image_a'] )){
+// $layerSrc = $_FILES['layerSrc'];
 $imgFullName = "camera_".uniqid('',true).".png";
 $dest = '../common/gallery/'.$imgFullName;
 
 move_uploaded_file($_FILES['image_a']['tmp_name'],$dest);
 
-$src = '../common/calques/advengers.png';
+$src = '../common/calques/'.$_POST['layerSrc'];
 
 // Create image instances
 $src = imagecreatefrompng($src);

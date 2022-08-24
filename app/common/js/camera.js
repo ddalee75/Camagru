@@ -129,8 +129,11 @@
         // console.log(blob.type)
         
         var formImage = new FormData();
+        // var formImage1 = new FormData();
         formImage.append('image_a', blob);
-    
+        formImage.append('layerSrc', layerSrc);
+        
+        // formImage1.append("layerSrc", layerSrc);
         var ajax = new XMLHttpRequest();
     
         ajax.open("POST","http://localhost/classes/camera.requete.classes.php",true);
@@ -149,9 +152,29 @@
             alert("la requette a échoué")
         }
     
+        // var ajax1 = new XMLHttpRequest();
+    
+        // ajax1.open("POST","http://localhost/classes/camera.requete.classes.php",true);
+        // // ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+        // ajax1.onreadystatechange=function(){
+    
+        //     if (ajax1.readyState == 4 && ajax1.status==200){
+    
+        //     document.getElementById("jaxa").innerHTML+=(ajax1.responseText);
+        //     }
+        // }
+    
+        // ajax1.onerror=function(){
+    
+        //     alert("la requette a échoué")
+        // }
+
         ajax.send(formImage);
-        console.log("image send")
+        // ajax1.send(layerSrc);
         
+        console.log("image send")
+
         }
 
        
