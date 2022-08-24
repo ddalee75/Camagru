@@ -43,7 +43,7 @@ try {
   "INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Advengers', 'gallery-advenger.png', '1', '../common/img/gallery-advenger.png', '1');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Anniversaire', 'gallery-anniversaire.png', '2', '../common/img/gallery-anniversaire.png', '1');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Cadre poto', 'gallery-cadre.png', '3', '../common/img/gallery-cadre.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Jaconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Joconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png', '1');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Time', 'gallery-time.png', '5', '../common/img/gallery-time.png', '1');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png', '1');
   INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Hellfest', 'gallery-hellfest.png', '7', '../common/img/gallery-hellfest.png', '1');

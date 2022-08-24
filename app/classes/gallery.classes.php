@@ -94,7 +94,8 @@ class Gallery extends Dbh
       }
     
     }
-  } 
+  }
+   
 }
 
 $gallery = new Gallery;

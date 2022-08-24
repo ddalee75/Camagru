@@ -7,7 +7,7 @@ class Dbh
     private $username = "root";
     private $password = "camagru";
 
-    protected function connect()
+    public function connect()
     {
         try
         {

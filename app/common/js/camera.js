@@ -12,12 +12,15 @@
         // var photo = null;
         var startbutton = null;
         var layerSrc = null;
+        
 
         function startup() {
             video = document.getElementById('video');
             canvas = document.getElementById('canvas');
             photo = document.getElementById('photo');
             startbutton = document.getElementById('startbutton');
+            calque = document.getElementById('calque');
+            // userid = startbutton.name;
             
             navigator.mediaDevices.getMedia = ( navigator.mediaDevices.getUserMedia ||
                          navigator.webkitGetUserMedia ||
@@ -194,6 +197,7 @@
             element.border = 2;
             layerSrc = element.id;
             element.id = 'selected ' + element.id;
+            calque.src="../common/calques/" + layerSrc;
 
         }
         window.addEventListener('load', startup, false);

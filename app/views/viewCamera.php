@@ -1,3 +1,7 @@
+<?php
+            if(isset($_SESSION["userid"]))
+            {
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,9 @@
     <title>Chilee's Camagru</title>
     
 </head>
+
 <body>
+
 <div class="contentarea">
         <h1 class="titre1">
             PHOTOMATON
@@ -21,7 +27,7 @@
         <div class="camera">
             <video id="video">Video stream not available.</video>
             <div class="overlay">
-            <img src="../common/calques/advengers.png" alt="">
+            <img id="calque" alt="">
             </div>
         </div>
    
@@ -39,8 +45,13 @@
     </div>
     </div>
 
-    <div><button id="startbutton">Take photo</button></div>
+    <div><button id="startbutton" >Take photo</button></div>
         
 </div>
+
 </body>
 </html>
+
+<?php } ?>
+
+

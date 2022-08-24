@@ -1,8 +1,8 @@
 <?php 
-// print_r($_POST['layerSrc']);
+
 //Recuperer image et merge avec filtre
 if(!empty($_FILES['image_a'] )){
-// $layerSrc = $_FILES['layerSrc'];
+
 $imgFullName = "camera_".uniqid('',true).".png";
 $dest = '../common/gallery/'.$imgFullName;
 
@@ -24,12 +24,26 @@ imagepng($desti, $dest);
 
 imagedestroy($desti);
 imagedestroy($src);
+require_once("./camera_to_DB.classes.php");
+
+require_once('../views/header.php');
+// $userid= "3";
+uploadToDB($imgFullName, $dest);
 
 
 
 }else{
   print_r('no image');
 }
+
+
+
+
+  
+
+
+
+
 
 
 ?>
