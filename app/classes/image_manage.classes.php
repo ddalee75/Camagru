@@ -4,6 +4,9 @@ class ImageManage extends Dbh
 {
     public function showImage($orderGallery)
     {
+   
+    // $preview= $orderGallery-1;
+   
     $sql= "SELECT * FROM gallery WHERE orderGallery = '$orderGallery'" ;
     
     $stmt = $this->connect()->query($sql);
@@ -18,11 +21,14 @@ echo '
         <img src="'.$row["path"].'"></img>
         </div>
 
-        <div class="like_image">
-        <p>Like</p>
-        </div>
- 
+        
     ';
     }
 }    
 ?>
+
+
+
+<!-- <div class="like_image">
+    <p>Like</p>
+        </div> -->

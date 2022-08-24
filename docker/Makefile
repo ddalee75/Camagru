@@ -1,5 +1,5 @@
 SRC = docker-compose.yml
-NAME = Inception
+NAME = camagru
 
 all: $(NAME)
 
@@ -19,7 +19,13 @@ prune: fclean
 
 re: fclean all
 
-setup:
+setup_ip:
 	echo "127.0.0.1 camagru.42.fr" | sudo tee -a /etc/hosts
+
+
+setup_data:
+	docker exec php74-container php config/setup_data.php
+	chown www-data ../common/gallery/
+	
 
 .PHONY: all clean flcean re setup

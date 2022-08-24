@@ -79,7 +79,7 @@
     /* background-color: aquamarine; */
     width: 120px;
     height: 120px;
-     background-image: url("../img/btn_check1.png");
+    background-image: url("../img/btn_check1.png");
     background-size: contain;
     background-repeat: no-repeat; 
     /* background-position: center; */
@@ -90,7 +90,7 @@
 .btn_check1:hover{
     width: 120px;
     height: 120px;
-     background-image: url("../img/btn_check2.png");
+    background-image: url("../img/btn_check2.png");
     background-size: contain;
     background-repeat: no-repeat; 
     /* background-position: center; */

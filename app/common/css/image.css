@@ -17,11 +17,13 @@ body {
 
 .titre_image{
     /* background-color: rgb(33, 83, 83); */
-    width: 60%;
-    height: 50px;
-    color: rgb(12, 107, 131);
-    text-align: center;
-    margin-top: 10px;
+   
+    color: rgb(19, 6, 66);
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+ 
     
 }
 
@@ -41,15 +43,65 @@ body {
 
 .comments_image{
 
-    background-color: rgb(150, 150, 172);
+    /* background-color: rgb(87, 87, 180); */
     width: 60%;
-    height: 300px;
+    height: 250px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    
+    
+ 
+   
+}
+
+
+
+.txt_zone{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 170px;
+    text-decoration : none;
+
+}
+
+
+.show_comments{
+    /* background-color: rgb(131, 57, 109); */
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 50px;  
+    
     
 }
 
-.show_comments{
-    background-color: rgb(131, 57, 109);
-    width: 60%;
-    height: 300px;
-    
+button[type=submit] {
+  
+    width: 160px;
+    background-color: rgb(40, 81, 156);
+    color: white;
+    padding: 14px 14px;
+    align-items: flex-end;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+
+}
+
+.btn_comment{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+.message_image{
+    margin-top: 10px;
+    text-align: center;
+    font-size: medium;
+    color:rgb(173, 0, 9);
+
 }

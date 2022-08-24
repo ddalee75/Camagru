@@ -11,41 +11,57 @@
 
 <body>
 <div class="all_image">
-<?php
-    $orderGallery= $_GET["orderGallery"];
-    require_once('./classes/image_manage.classes.php');
-
-    $showImage = new ImageManage();
-    $showImage->showImage($orderGallery);
-?>
-
+        <?php
+            $orderGallery= $_GET["orderGallery"];
+            require_once('./classes/image_manage.classes.php');
+    
+            $showImage = new ImageManage();
+            $showImage->showImage($orderGallery);
+        ?>
+        
+        
         <div class="comments_image">
         
             <form action="../classes/image_form_manage.classes.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="orderGallery" value="<?php echo $orderGallery ?>">
-            <input class="input_txt_gallery" type="text" name="name" placeholder="Your name" >
-            <textarea name="content" placeholder="Write your comment here..." required></textarea>
-            <button class="bn_gallery" type="submit" name="submit">Submit Comment</button>
-
+            <input type="hidden" name="useruid" value="<?php echo $_SESSION["useruid"];?>" >
+            <textarea class ="txt_zone" name="content" placeholder="Write your comment here..." required></textarea>
+            <div class="btn_comment"><button type="submit" name="submit">Submit Comment</button></div>
             </form>
+            
+            <div class="message_image">
+                <?php 
+                    if(isset($_GET["error"])){
+                    
+                    
+                        if($_GET["error"] == "imageError"){
+                            echo 'Image error, please return to gallery !';
+                        }
+                        if($_GET["error"] == "commentSucess"){
+                            echo 'comment posted';
+                        }
+                        if($_GET["error"] == "stmtError"){
+                            echo 'statment error when set comment';
+                        }
+                    }
+                ?>        
+            </div>
+        
 
-            <?php 
-                if(isset($_GET["error"])){
-                   
-                    if($_GET["error"] == "emptyUserName"){
-                        echo 'Please Enter your Name !';
-                    }
-                    if($_GET["error"] == "imageError"){
-                        echo 'Image error, please return to gallery !';
-                    }
-                    if($_GET["error"] == "commentSucess"){
-                        echo 'comment posted';
-                    }
-                }
-            ?>        
+
+            <div class="show_comments">
+            <?php
+            
+                // print_r($orderGallery);
+                require_once('./classes/image_show_comment.classes.php');
+
+                $show_comment = new CommentManage();
+                $show_comment->showComment($orderGallery);
+            ?>
+            </div>
         </div>
 
         
- </div>
+</div>
 </body>
 </html>

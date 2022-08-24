@@ -1,0 +1,102 @@
+/* CSS comes here */
+
+.contentarea {
+    /* background-color: aquamarine; */
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    
+}
+
+#video {
+    /* border: 1px solid rgb(250, 13, 13); */
+    width: 460 px;
+    /* background-color: blue; */
+    z-index:15;
+    height: 345px;
+}
+
+.wrap {
+    position:relative;
+   
+  }
+
+.overlay {
+/* background-color: rgba(87, 61, 28, 0.658); */
+border: 1px solid rgb(145, 144, 144);
+position:absolute;
+top:0;
+display: flex;
+justify-content: left;
+z-index:25;
+text-align:center;
+}
+
+/* #photo {
+    border: 1px solid black;
+    width: 460px;
+    height: 325px;
+} */
+
+#canvas {
+    display: none;
+}
+
+.camera {
+    width: 460px;
+    display: inline-block;
+}
+
+.output {
+    width: 460px;
+    display: inline-block;
+}
+
+#startbutton {
+    display: block;
+    position: relative;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 36px;
+    padding: 5px;
+    background-color: #510069;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+}
+
+
+.titre1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(13, 115, 163);
+}
+
+.caroussel{
+    background-color: rgb(209, 211, 210);
+    width: 60%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.card{
+    background-color: #eeeeee;
+    width: 92px;
+    height: 68px;
+    /* border: 2px solid red; */
+    overflow: hidden;
+    margin: 10px;
+  
+
+}
+
+.secteur2{
+    display: flex;
+    justify-content: center;
+}

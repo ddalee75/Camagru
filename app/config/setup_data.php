@@ -23,6 +23,9 @@ try {
     pwd_ask_date TIME
   )";
 
+  $query_users_seed=
+  "INSERT INTO users(users_id, users_uid, users_pwd, users_email, users_token, users_confirm, pwd_token) VALUE ('1', 'admin', 'QWMFqO4/XsMMc', 'chilee42paris@gmail.com', '',  '1', '')";
+
   $query_gallery ="CREATE TABLE IF NOT EXISTS gallery (
           idGallery INT AUTO_INCREMENT PRIMARY KEY,
           nameGiven LONGTEXT not null,
@@ -37,17 +40,16 @@ try {
   
 
   $query_gallery_seed = 
-  "INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Advengers', 'gallery-advenger.png', '1', '../common/img/gallery-advenger.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Anniversaire', 'gallery-anniversaire.png', '2', '../common/img/gallery-anniversaire.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Cadre poto', 'gallery-cadre.png', '3', '../common/img/gallery-cadre.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Jaconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Time', 'gallery-time.png', '5', '../common/img/gallery-time.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Wanted', 'gallery-wanted.png', '7', '../common/img/gallery-wanted.png');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Sahara', 'dersert.jpg', '8', '../common/gallery/desert.jpg');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Plage', 'plage.jpg', '9', '../common/gallery/plage.jpg');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Etretat', 'etretat.jpg', '10', '../common/gallery/etretat.jpg');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path) VALUES ('Road', 'road.jpg', '11', '../common/gallery/road.jpg')";
+  "INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Advengers', 'gallery-advenger.png', '1', '../common/img/gallery-advenger.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Anniversaire', 'gallery-anniversaire.png', '2', '../common/img/gallery-anniversaire.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Cadre poto', 'gallery-cadre.png', '3', '../common/img/gallery-cadre.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Jaconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Time', 'gallery-time.png', '5', '../common/img/gallery-time.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Hellfest', 'gallery-hellfest.png', '7', '../common/img/gallery-hellfest.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Wanted', 'gallery-wanted.png', '8', '../common/img/gallery-wanted.png', '1')";
+  
+  
 
   $query_comment="CREATE TABLE IF NOT EXISTS comment(
     id_comment INT AUTO_INCREMENT PRIMARY KEY,
@@ -63,6 +65,9 @@ try {
 try{
 
   $conn->exec($query_users);
+  echo "Table users created successfully,";
+
+  $conn->exec($query_users_seed);
   echo "Table users created successfully,";
   
   $conn->exec($query_gallery);
