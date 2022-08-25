@@ -15,7 +15,9 @@
     print_r($_SESSION["userid"]);
   ?> -->
 <div class="all_gallery">
+  
   <div class="upload">
+    
               <form action="../classes/gallery.classes.php" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
                   <input class="input_txt_gallery" type="text" name="filename" placeholder="File name">
@@ -27,6 +29,7 @@
               
               
   </div>
+  <div class="titre_upload">Upload Your Image Here</div>
   <div class="message_gallery">
   <?php 
                       if(isset($_GET["error"])){
@@ -38,7 +41,7 @@
                             echo 'No file input';
                           }
                           if($_GET["error"] == "UploadSuccess"){
-                            echo 'Upload Success';
+                            echo 'Upload Success, Go back to camera please';
                           }
                           if($_GET["error"] == "FileNamePlease"){
                             echo 'Please give a file name';
@@ -52,8 +55,9 @@
                         }
                         ?>
 </div>                        
-  
+<div class="titre_gallery">Our Best Souvenirs!</div>
   <div class = "gallery">
+    
     <div class = "gallery-container">
               
     

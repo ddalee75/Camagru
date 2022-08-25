@@ -47,7 +47,7 @@ header.navbar{
 
  .camera_header{
     background-color: rgb(235, 235, 235);
-    width:30%;
+    width:35%;
     margin: 5px;
     padding: 2px;
     color: rgb(1, 112, 139);
@@ -55,11 +55,12 @@ header.navbar{
  }
  .camera_header:hover{
     background-color: rgb(5, 148, 158);
-    width:30%;
+    width:40%;
     margin: 5px;
-    padding: 2px;
+    padding: 5px;
     color: aliceblue;
     text-decoration : none;
+    font-size: larger;
  }
 
  .profile_header{
@@ -72,11 +73,12 @@ header.navbar{
  }
  .profile_header:hover{
     background-color: rgb(115, 117, 117);
-    width:30%;
+    width:35%;
     margin: 5px;
-    padding: 2px;
+    padding: 5px;
     color: aliceblue;
     text-decoration : none;
+    font-size: larger;
  }
 
 
@@ -89,10 +91,11 @@ header.navbar{
 }
 .album_header:hover{
     background-color: rgb(104, 1, 95);
-    width:30%;
-    padding: 2px;
+    width:35%;
+    padding: 5px;
     color: aliceblue;
     text-decoration : none;
+    font-size: larger;
 }
 
 

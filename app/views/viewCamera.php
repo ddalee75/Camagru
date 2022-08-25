@@ -36,7 +36,7 @@
 
     <canvas id="canvas"></canvas>
       
-    <div class="jaxa_css" id="jaxa" style='width:80%;margin:5px;'></div>
+    <div class="jaxa_css" id="jaxa" style='width:60%;margin:5px;'></div>
        
     <div class="caroussel_center">
     <div class="caroussel">
@@ -45,8 +45,20 @@
     </div>
         
 
-    <div calss="button_css"><button id="startbutton" name="userid" value="<?php echo $_SESSION["userid"];?>" >Take photo</button>
+    <div calss="button_css">
+    <button onclick='ouvrir_camera()' >Enable camera</button>
+    <button onclick='fermer()' > Disable camera</button>
     </div>
+    
+    <div class=startbutton_css>
+    <!-- <button id="mergePhoto" name="userid" value="<?php echo $_SESSION["userid"];?>" >Merge photo</button> -->
+
+    <button id="startbutton" name="userid" value="<?php echo $_SESSION["userid"];?>" >Take photo</button>
+    <button id="savePhoto" onclick="window.location.href = '../index.php?url=camera';" >Save photo</button> 
+    </div>
+    <button id="uploadImage" onclick="window.location.href = '../index.php?url=gallery';" >Upload image</button>
+           
+    
 
     <div class="showUserShootEnv"> 
         

@@ -14,7 +14,7 @@
             <div class="nav_1_header">
                 
                 <a class="camera_header" href="http://localhost/index.php?url=camera">
-                <p>Camera</p></a>
+                <p>Photomaton</p></a>
 
                
                 <a class="album_header" href="http://localhost/index.php?url=gallery">
