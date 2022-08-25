@@ -1,18 +1,20 @@
 <?php
 require_once('./dbh.classes.php');
+// require_once('./show_user_shoot.classes.php');
 
 
-function uploadToDB($imgFullName, $dest){
-$nameGiven = "By ching";
-$userid= "2";
+function uploadToDB($imgFullName, $dest, $userid){
+$nameGiven = "";
+$userid= $userid;
 
 $conn = new Dbh;
 $sql = "SELECT * FROM gallery";
               
-    $stmt = $conn->connect()->prepare($sql);
-    $stmt->execute();
-    $row= $stmt->rowCount();
-    $setImageOrder = $row +1;
+$stmt = $conn->connect()->prepare($sql);
+$stmt->execute();
+$row= $stmt->rowCount();
+$setImageOrder = $row +1;
+
 
 
 $sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, orderGallery, path, users_id) VALUES(?, ?, ?, ?, ?);";
@@ -26,8 +28,7 @@ exit();
 
 $conn = null;
 
-
-    // print_r($userid);
-
+//   $showShoot= new ShootManage;
+//   $showShoot->showShoot($userid)
 
 }

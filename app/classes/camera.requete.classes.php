@@ -1,4 +1,6 @@
 <?php 
+// session_start();
+// echo session['userid'];
 
 //Recuperer image et merge avec filtre
 if(!empty($_FILES['image_a'] )){
@@ -9,6 +11,7 @@ $dest = '../common/gallery/'.$imgFullName;
 move_uploaded_file($_FILES['image_a']['tmp_name'],$dest);
 
 $src = '../common/calques/'.$_POST['layerSrc'];
+$userid= $_POST['userid'];
 
 // Create image instances
 $src = imagecreatefrompng($src);
@@ -24,13 +27,11 @@ imagepng($desti, $dest);
 
 imagedestroy($desti);
 imagedestroy($src);
+
 require_once("./camera_to_DB.classes.php");
+uploadToDB($imgFullName, $dest, $userid);
 
-require_once('../views/header.php');
-// $userid= "3";
-uploadToDB($imgFullName, $dest);
-
-
+// header("location: ../index.php?url=camera&error=updated");
 
 }else{
   print_r('no image');

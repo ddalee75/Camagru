@@ -20,7 +20,7 @@
             photo = document.getElementById('photo');
             startbutton = document.getElementById('startbutton');
             calque = document.getElementById('calque');
-            // userid = startbutton.name;
+            userid = startbutton.getAttribute('value');
             
             navigator.mediaDevices.getMedia = ( navigator.mediaDevices.getUserMedia ||
                          navigator.webkitGetUserMedia ||
@@ -135,6 +135,7 @@
         // var formImage1 = new FormData();
         formImage.append('image_a', blob);
         formImage.append('layerSrc', layerSrc);
+        formImage.append('userid', userid);
         
         // formImage1.append("layerSrc", layerSrc);
         var ajax = new XMLHttpRequest();
@@ -154,33 +155,13 @@
     
             alert("la requette a échoué")
         }
-    
-        // var ajax1 = new XMLHttpRequest();
-    
-        // ajax1.open("POST","http://localhost/classes/camera.requete.classes.php",true);
-        // // ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    
-        // ajax1.onreadystatechange=function(){
-    
-        //     if (ajax1.readyState == 4 && ajax1.status==200){
-    
-        //     document.getElementById("jaxa").innerHTML+=(ajax1.responseText);
-        //     }
-        // }
-    
-        // ajax1.onerror=function(){
-    
-        //     alert("la requette a échoué")
-        // }
+         
 
         ajax.send(formImage);
-        // ajax1.send(layerSrc);
-        
+     
         console.log("image send")
 
         }
-
-       
 
         function selectCalque(element)
         {

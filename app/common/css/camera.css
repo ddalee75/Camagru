@@ -1,36 +1,44 @@
 /* CSS comes here */
+*{
+    margin:0px;
+    box-sizing: border-box;
+}
 
-.contentarea {
-    /* background-color: aquamarine; */
+.all_webcam {
+    /* background-color: rgb(55, 196, 149); */
+    width: 100%;
     margin-top: 20px;
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
     text-align: center;
-    
+    height: 100vh;
 }
 
-#video {
+.webcam_center{
+
+    display:flex;
+    justify-content: center;
+}
+
+.webcam {
+   
+    position:relative;
     /* border: 1px solid rgb(250, 13, 13); */
     width: 460 px;
     /* background-color: blue; */
-    z-index:15;
-    height: 345px;
-}
 
-.wrap {
-    position:relative;
-   
-  }
+    height: 345px;
+    background-color: burlywood;
+}
 
 .overlay {
 /* background-color: rgba(87, 61, 28, 0.658); */
 border: 1px solid rgb(145, 144, 144);
 position:absolute;
 top:0;
-display: flex;
-justify-content: left;
-z-index:25;
-text-align:center;
 }
 
 /* #photo {
@@ -39,19 +47,21 @@ text-align:center;
     height: 325px;
 } */
 
+
+
 #canvas {
     display: none;
 }
 
-.camera {
+/* .camera {
     width: 460px;
     display: inline-block;
-}
+} */
 
-.output {
+/* .output {
     width: 460px;
     display: inline-block;
-}
+} */
 
 #startbutton {
     display: block;
@@ -60,12 +70,13 @@ text-align:center;
     margin-left: auto;
     margin-right: auto;
     bottom: 36px;
-    padding: 5px;
+    padding: 20px;
     background-color: #510069;
     border: 1px solid rgba(255, 255, 255, 0.7);
-    font-size: 14px;
+    font-size: 20px;
     color: rgba(255, 255, 255, 1.0);
     cursor: pointer;
+    border-radius: 10px;
 }
 
 
@@ -75,12 +86,18 @@ text-align:center;
     color: rgb(13, 115, 163);
 }
 
+.caroussel_center{
+   
+    display: flex;
+    justify-content: center;
+}
+
 .caroussel{
-    background-color: rgb(209, 211, 210);
+    background-color: rgb(233, 233, 233);
     width: 60%;
-    height: 100px;
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     justify-content: center;
     margin-top: 50px;
 }
@@ -92,11 +109,43 @@ text-align:center;
     /* border: 2px solid red; */
     overflow: hidden;
     margin: 10px;
-  
+}
+
+
+
+.showUserShootEnv{
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+   
+    
 
 }
 
-.secteur2{
+
+.showUserShoot{
+    background-color: rgb(233, 233, 233);
+    width: 60%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+    text-align: center;
+    margin-bottom: 100px;
+
+  
+}
+
+.img_bloc_Shoot{
+    margin: 5px;
+}
+.photo_Shoot{
+    width: 115px;
+    height: 87px;
+    margin-bottom:5px ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
 }

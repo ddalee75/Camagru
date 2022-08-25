@@ -19,35 +19,55 @@
 
 <body>
 
-<div class="contentarea">
-        <h1 class="titre1">
-            PHOTOMATON
-        </h1>
-        <div class="wrap">
-        <div class="camera">
+<div class="all_webcam">
+    
+    <h1 class="titre1">
+        PHOTOMATON
+    </h1>
+    <div class="webcam_center">            
+        <div class="webcam">
             <video id="video">Video stream not available.</video>
             <div class="overlay">
             <img id="calque" alt="">
             </div>
         </div>
-   
-        <canvas id="canvas"></canvas>
-        <!-- <div class="output">
-            <img id="photo" alt="The screen capture will appear in this box.">
-        </div> -->
-        <div id="jaxa" style='width:80%;margin:5px;'></div>
-        <!-- <button onclick='sauver()'>sauvegarder</button> -->
     </div>
-   
-    <div class="secteur2">
+
+
+    <canvas id="canvas"></canvas>
+      
+    <div class="jaxa_css" id="jaxa" style='width:80%;margin:5px;'></div>
+       
+    <div class="caroussel_center">
     <div class="caroussel">
         <?php include("./classes/show_calques.classes.php") ?>       
     </div>
     </div>
-
-    <div><button id="startbutton" >Take photo</button></div>
         
+
+    <div calss="button_css"><button id="startbutton" name="userid" value="<?php echo $_SESSION["userid"];?>" >Take photo</button>
+    </div>
+
+    <div class="showUserShootEnv"> 
+        
+        <div class="showUserShoot">
+       
+        <?php
+        
+        require_once('./classes/show_user_shoot.classes.php');
+            $users_id= $_SESSION["userid"];
+            $showShoot= new ShootManage;
+            $showShoot->showShoot($users_id)
+        ?>
+        </div>
+   
 </div>
+        
+
+
+</div>
+          
+
 
 </body>
 </html>
