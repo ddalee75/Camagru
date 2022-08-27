@@ -11,15 +11,15 @@ $conn = new Dbh;
 $sql = "SELECT * FROM gallery";
               
 $stmt = $conn->connect()->prepare($sql);
-$stmt->execute();
-$row= $stmt->rowCount();
-$setImageOrder = $row +1;
+// $stmt->execute();
+// $row= $stmt->rowCount();
+// $setImageOrder = $row +1;
 
 
 
-$sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, orderGallery, path, users_id) VALUES(?, ?, ?, ?, ?);";
+$sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, path, users_id) VALUES(?, ?, ?, ?);";
 $stmt = $conn->connect()->prepare($sql);
-if(!$stmt->execute(array($nameGiven, $imgFullName, $setImageOrder, $dest, $userid)))
+if(!$stmt->execute(array($nameGiven, $imgFullName, $dest, $userid)))
 {
 $stmt = null;
 header("location: ../index.php?url=camera&error=stmtfailed");

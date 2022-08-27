@@ -25,7 +25,7 @@ setup_ip:
 
 setup_data:
 	docker exec php74-container php config/setup_data.php
-	chown www-data ../common/gallery/
+	chown www-data ../app/common/gallery/
 	
 
 .PHONY: all clean flcean re setup

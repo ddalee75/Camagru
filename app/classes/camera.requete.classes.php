@@ -16,12 +16,15 @@ $userid= $_POST['userid'];
 // Create image instances
 $src = imagecreatefrompng($src);
 $desti = imagecreatefrompng($dest);
+//modifier couleur dimage camera plus rouge
+imagefilter($desti, IMG_FILTER_COLORIZE, 30,0,0,0);
 
 // Copy merge les deux photos
 imagecopy($desti, $src, 0, 0, 0, 0, 460, 345);
 
 // Output and free from memory
 header('Content-Type: image/png');
+
 imagepng($desti, $dest);
 
 

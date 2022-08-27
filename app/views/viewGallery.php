@@ -52,6 +52,9 @@
                           if($_GET["error"] == "AnError"){
                             echo 'An error when upload';
                           }
+                          if($_GET["error"] == "imageDel"){
+                            echo 'Photo deleted';
+                          }
                         }
                         ?>
 </div>                        
@@ -79,21 +82,3 @@
 
 </body>
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Multipart Form Data</title>
-  </head>
-  <body>
-    <form action="uploading.php" method="POST" 
-          enctype="multipart/form-data">
-     <h4>Browse your file</h4>
-       <input type="file" name="uploadfile" /> <br><br>
-       <input type="submit" value="Upload File"/>
-   </form>
-  </body>
-</html> -->

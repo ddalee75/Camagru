@@ -5,14 +5,6 @@
     
     
 }
-/* body, html{
-    background-image: url("../img/home.jpg");
-    height: 100vh;
-    background-attachment:fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
 
 .all_home{
     width: 100%;
@@ -95,5 +87,107 @@
     background-repeat: no-repeat; 
     /* background-position: center; */
     margin-bottom: 20%;
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+    *{
+   
+        margin: 0px;
+        box-sizing:border-box;
+        
+        
+    }
+    
+    .all_home{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 20px;
+        /* background-color: rgb(146, 99, 37); */
+    
+    }
+    
+    .photomaton_home{
+        background-image: url("../img/photomaton.png");
+        background-color: rgb(223, 223, 223);
+        width: 100%;
+        height: 80%;
+        
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* display: flex;
+        align-items:flex-end;
+        justify-content: center; */
+     
+    }
+    
+    .gallery_home{
+        background-image: url("../img/album.png");
+        /* background-color: aqua; */
+        width: 100%;
+        height: 80%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      
+      
+     
+     
+    }
+    
+    .btn_play1{
+    
+        /* background-color: aquamarine; */
+        width: 120px;
+        height: 120px;
+         background-image: url("../img/btn_play1.png");
+        background-size: contain;
+        background-repeat: no-repeat; 
+        /* background-position: center; */
+        margin-bottom: 20%;
+    
+    }
+    
+    .btn_play1:hover{
+        width: 120px;
+        height: 120px;
+         background-image: url("../img/btn_play2.png");
+        background-size: contain;
+        background-repeat: no-repeat; 
+        /* background-position: center; */
+        margin-bottom: 20%;
+    
+    }
+    
+    .btn_check1{
+    
+        /* background-color: aquamarine; */
+        width: 120px;
+        height: 120px;
+        background-image: url("../img/btn_check1.png");
+        background-size: contain;
+        background-repeat: no-repeat; 
+        /* background-position: center; */
+        margin-bottom: 10%;
+    
+    }
+    
+    .btn_check1:hover{
+        width: 120px;
+        height: 120px;
+        background-image: url("../img/btn_check2.png");
+        background-size: contain;
+        background-repeat: no-repeat; 
+        /* background-position: center; */
+        margin-bottom: 10%;
+    
+    }
 
 }

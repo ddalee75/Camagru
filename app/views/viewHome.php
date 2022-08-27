@@ -13,7 +13,6 @@
 <div class="all_home">
     <div class="photomaton_home">
     <a class="btn_play1" href="../index.php?url=camera"></a>
-       
     </div>
 
     <div class="gallery_home">

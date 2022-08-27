@@ -46,6 +46,7 @@ services:
             - "3306"
         volumes:
             - ../DataMysql:/var/lib/mysql
+            # - :/docker-entrypoint-initdb.d/schema.sql
         command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci    
         restart: always # always restart unless stopped manually
         environment: 
@@ -62,8 +63,10 @@ services:
             PMA_HOST: mysql8-service #nom du service mysql
             PMA_PASSWORD: camagru
             UPLOAD_LIMIT: 20M
+        depends_on:
+            - mysql8-service
         networks: 
             - camagru
         restart: always
         ports:
-            - 8899:80
+            - 8888:80

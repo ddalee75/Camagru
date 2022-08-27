@@ -2,12 +2,14 @@
 require_once('./classes/dbh.classes.php');
 class ImageManage extends Dbh
 {
-    public function showImage($orderGallery)
+
+   
+    public function showImage($idGallery)
     {
    
-    // $preview= $orderGallery-1;
+    // $preview= $idGallery-1;
    
-    $sql= "SELECT * FROM gallery WHERE orderGallery = '$orderGallery'" ;
+    $sql= "SELECT * FROM gallery WHERE idGallery = '$idGallery'" ;
     
     $stmt = $this->connect()->query($sql);
     $row=$stmt->fetch();
@@ -21,14 +23,13 @@ echo '
         <img src="'.$row["path"].'"></img>
         </div>
 
-        
+       
+    
     ';
     }
+
+
+   
 }    
 ?>
 
-
-
-<!-- <div class="like_image">
-    <p>Like</p>
-        </div> -->

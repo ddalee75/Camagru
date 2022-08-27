@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="all">
-    
+    <div class="bloc_img"></div>
     <div class="bloc_accueil">
    
         <div class="logo">
@@ -80,7 +80,7 @@
             <div class="signup_txt">Don't have an account yet?<br> Sign up here!</div>
             <form action="http://localhost/controllers/ControllerSignup.php" method="post">
                 <input type="text" name="uid" placeholder="User name"><br>
-                <input type="password" name="pwd" placeholder="Password"><br>
+                <input type="password" name="pwd" placeholder="Password (At least 1 Capital letter)"><br>
                 <input type="password" name="pwdrepeat" placeholder="Repeat Password"><br>
                 <input type="text" name="email" placeholder="E-mail">
                 <br>

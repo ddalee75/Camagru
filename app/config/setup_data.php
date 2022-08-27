@@ -30,7 +30,6 @@ try {
           idGallery INT AUTO_INCREMENT PRIMARY KEY,
           nameGiven LONGTEXT not null,
           imgFullNameGallery LONGTEXT not null,
-          orderGallery LONGTEXT not null,
           path VARCHAR(1000) NOT NULL,
           users_id INT(11), 
           FOREIGN KEY (users_id) REFERENCES users(users_id)
@@ -40,14 +39,14 @@ try {
   
 
   $query_gallery_seed = 
-  "INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Advengers', 'gallery-advenger.png', '1', '../common/img/gallery-advenger.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Anniversaire', 'gallery-anniversaire.png', '2', '../common/img/gallery-anniversaire.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Cadre poto', 'gallery-cadre.png', '3', '../common/img/gallery-cadre.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Joconde', 'gallery-jaconde.png', '4', '../common/img/gallery-jaconde.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Time', 'gallery-time.png', '5', '../common/img/gallery-time.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Titanic', 'gallery-titanic.png', '6', '../common/img/gallery-titanic.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Hellfest', 'gallery-hellfest.png', '7', '../common/img/gallery-hellfest.png', '1');
-  INSERT INTO gallery (nameGiven, imgFullNameGallery, orderGallery, path, users_id) VALUES ('Wanted', 'gallery-wanted.png', '8', '../common/img/gallery-wanted.png', '1')";
+  "INSERT INTO gallery (nameGiven, imgFullNameGallery, path, users_id) VALUES ('Advengers', 'gallery-advenger.png', '../common/img/gallery-advenger.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Anniversaire', 'gallery-anniversaire.png', '../common/img/gallery-anniversaire.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Cadre poto', 'gallery-cadre.png', '../common/img/gallery-cadre.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Joconde', 'gallery-jaconde.png', '../common/img/gallery-jaconde.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Time', 'gallery-time.png', '../common/img/gallery-time.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Titanic', 'gallery-titanic.png', '../common/img/gallery-titanic.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Hellfest', 'gallery-hellfest.png', '../common/img/gallery-hellfest.png', '1');
+  INSERT INTO gallery (nameGiven, imgFullNameGallery,  path, users_id) VALUES ('Wanted', 'gallery-wanted.png', '../common/img/gallery-wanted.png', '1')";
   
   
 
@@ -55,7 +54,7 @@ try {
     id_comment INT AUTO_INCREMENT PRIMARY KEY,
     postUser LONGTEXT NOT NULL,
     postContent TEXT NOT NULL,
-    orderGallery LONGTEXT NOT NULL,
+    idGallery LONGTEXT NOT NULL,
     postDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     
    )";

@@ -4,11 +4,11 @@ require_once('./dbh.classes.php');
 class ImageFormManage extends Dbh
 {
     
-    public function setComment($orderGallery, $postUser, $postContent)
+    public function setComment($idGallery, $postUser, $postContent)
     {
-        if (empty($orderGallery))
+        if (empty($idGallery))
         {
-            header("location: ../index.php?url=image&orderGallery=$orderGallery&error=imageError");
+            header("location: ../index.php?url=image&idGallery=$idGallery&error=imageError");
                 exit();
         }
         
@@ -23,40 +23,40 @@ class ImageFormManage extends Dbh
             // $row= $stmt->rowCount();
             // print_r($row+1);
           
-            $stmt = $this->connect()->prepare('INSERT INTO comment (postUser, postContent, orderGallery) VALUES (?, ?, ?);');
-            if(!$stmt->execute(array($postUser, $postContent, $orderGallery)))
+            $stmt = $this->connect()->prepare('INSERT INTO comment (postUser, postContent, idGallery) VALUES (?, ?, ?);');
+            if(!$stmt->execute(array($postUser, $postContent, $idGallery)))
             {
-                header("location: ../index.php?url=image&orderGallery=$orderGallery&error=stmtError");
+                header("location: ../index.php?url=image&idGallery=$idGallery&error=stmtError");
                 exit();
             }
 
-            header("location: ../index.php?url=image&orderGallery=$orderGallery&error=commentSucess");
+            header("location: ../index.php?url=image&idGallery=$idGallery&error=commentSucess");
             $stmt = NULL;
-            $this->sendNotificationOwner($orderGallery, $postUser);
+            $this->sendNotificationOwner($idGallery, $postUser);
             exit();
         }
           
     }
 
-    public function sendNotificationOwner($orderGallery, $postUser)
+    public function sendNotificationOwner($idGallery, $postUser)
     {
         //fecth variable grace a foreign key
         
-        $sql="SELECT users_email, users_uid FROM gallery JOIN users ON gallery.users_id=users.users_id WHERE orderGallery='$orderGallery'";
+        $sql="SELECT users_email, users_uid FROM gallery JOIN users ON gallery.users_id=users.users_id WHERE idGallery='$idGallery'";
      
         $stmt = $this->connect()->query($sql);
         $row=$stmt->fetch();
         $email=$row["users_email"];
         $users_uid=$row["users_uid"];
         
-        // header("location: ../index.php?url=image&orderGallery=$orderGallery&error=commentSucess&$email");
+        // header("location: ../index.php?url=image&idGallery=$idGallery&error=commentSucess&$email");
 
         //Envoie email
         
         $APP_URL = 'http://localhost/';
         $SENDER_EMAIL_ADDRESS = 'no-reply@camagru42.fr';
         // set email subject & body
-        $link_photo= $APP_URL."index.php?url=image&orderGallery=$orderGallery";
+        $link_photo= $APP_URL."index.php?url=image&idGallery=$idGallery";
         $subject = 'Someone comment your photo';
         $message = <<<MESSAGE
                         Hello, $users_uid,
@@ -78,13 +78,13 @@ class ImageFormManage extends Dbh
 }    
 
 
-$orderGallery = $_POST['orderGallery'];
-// print_r($orderGallery);
+$idGallery = $_POST['idGallery'];
+// print_r($idGallery);
 $postUser = $_POST['useruid'];
 $postContent = $_POST['content'];
 
 $imageFormManage = new ImageFormManage;
-$imageFormManage->setComment($orderGallery, $postUser, $postContent);
+$imageFormManage->setComment($idGallery, $postUser, $postContent);
 
 
 

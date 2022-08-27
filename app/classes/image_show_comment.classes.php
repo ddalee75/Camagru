@@ -2,10 +2,10 @@
 require_once('./classes/dbh.classes.php');
 class CommentManage extends Dbh
 {
-    public function showComment($orderGallery)
+    public function showComment($idGallery)
     {
      
-    $sql= "SELECT * FROM comment WHERE orderGallery = '$orderGallery'" ;
+    $sql= "SELECT * FROM comment WHERE idGallery = '$idGallery'" ;
     
     $stmt = $this->connect()->query($sql);
     while($row =$stmt->fetch())

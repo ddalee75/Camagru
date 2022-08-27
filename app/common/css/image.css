@@ -12,7 +12,15 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+}
+
+.showbloc_image{
+    /* background-color: #d1aaaa; */
+    width: 100%;
+
+
+
 }
 
 .titre_image{
@@ -29,16 +37,39 @@ body {
 
 .show_image{
     /* background-color: rgb(102, 10, 74); */
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.like_image{
-    width: 25%;
-    height:20px;
+
+
+
+.icons_image{
+
+    /* background-color: rgb(204, 132, 24); */
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.liked_image{
+    font-size: 20px;
+    color: #460357;
     text-align: center;
-    background-color: aqua;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    /* background-color: #246927; */
+
+}
+
+.croix_image{
+    /* background-color: #3edd46; */
+    width:30px;
+    text-align: center;
+
 }
 
 .comments_image{
@@ -49,9 +80,6 @@ body {
     margin-top: 50px;
     padding-bottom: 50px;
     
-    
- 
-   
 }
 
 

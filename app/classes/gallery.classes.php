@@ -50,15 +50,15 @@ class Gallery extends Dbh
                 $sql = "SELECT * FROM gallery";
               
                 $stmt = $this->connect()->prepare($sql);
-                $stmt->execute();
-                $row= $stmt->rowCount();
-                $setImageOrder = $row +1;
+                // $stmt->execute();
+                // $row= $stmt->rowCount();
+                // $setImageOrder = $row +1;
                 //  print_r($setImageOrder);
                 //  print_r($path);
 
-                $sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, orderGallery, path, users_id) VALUES(?, ?, ?, ?, ?);";
+                $sql = "INSERT INTO gallery (namegiven, imgFullNameGallery, path, users_id) VALUES(?, ?, ?, ?);";
                 $stmt = $this->connect()->prepare($sql);
-                if(!$stmt->execute(array($nameGiven, $imgFullName, $setImageOrder, $path, $users_id)))
+                if(!$stmt->execute(array($nameGiven, $imgFullName, $path, $users_id)))
                 {
                   $stmt = null;
                   header("location: ../index.php?url=galley&error=stmtfailed");

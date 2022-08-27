@@ -12,11 +12,12 @@ class GalleryManage extends Dbh
     {
         echo '
         <div class="img_bloc_gallery">
-        <a class="txt_color" href="../index.php?url=image&orderGallery='.$row["orderGallery"].'">
+        <a class="txt_color" href="../index.php?url=image&idGallery='.$row["idGallery"].'">
        
         <div class="photo_gallery" style="background-image: url('.$row["path"].');"></div>
-        <h3>'.$row["nameGiven"].'</h3>
+        <h3>'.$row["nameGiven"].'</h3> 
         </a>
+        
         </div>
         ';
 
