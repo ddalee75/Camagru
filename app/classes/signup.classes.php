@@ -34,15 +34,16 @@ class Signup extends Dbh
         {
             return substr(md5(openssl_random_pseudo_bytes(20)), -$len);
         }
-        $newToken = getToken(10);        
-        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email, users_token, pwd_token) VALUES (?, ?, ?, ?, ?);');
+        $newToken = getToken(10);      
+        $notify = "yes";  
+        $stmt = $this->connect()->prepare('INSERT INTO users (users_uid, users_pwd, users_email, users_token, notify, pwd_token) VALUES (?, ?, ?, ?, ?, ?);');
 
         //checker password avant inserer les datas
         //Crée une clé de hachage pour un mot de passe
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
         $pwd_token = "";
 
-        if(!$stmt->execute(array($uid, $hashedPwd, $email, $newToken, $pwd_token)))
+        if(!$stmt->execute(array($uid, $hashedPwd, $email, $newToken, $notify, $pwd_token)))
         {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");

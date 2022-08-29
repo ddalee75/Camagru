@@ -40,6 +40,7 @@
             <form action="../classes/image_form_manage.classes.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="idGallery" value="<?php echo $idGallery ?>">
             <input type="hidden" name="useruid" value="<?php echo $_SESSION["useruid"];?>" >
+            <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"];?>" >
             <textarea class ="txt_zone" name="content" placeholder="Write your comment here..." required></textarea>
             <div class="btn_comment"><button type="submit" name="submit">Submit Comment</button></div>
             </form>

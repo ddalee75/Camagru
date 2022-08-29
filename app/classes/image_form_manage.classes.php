@@ -4,7 +4,7 @@ require_once('./dbh.classes.php');
 class ImageFormManage extends Dbh
 {
     
-    public function setComment($idGallery, $postUser, $postContent)
+    public function setComment($idGallery, $postUser, $postContent, $users_id)
     {
         if (empty($idGallery))
         {
@@ -29,10 +29,20 @@ class ImageFormManage extends Dbh
                 header("location: ../index.php?url=image&idGallery=$idGallery&error=stmtError");
                 exit();
             }
-
             header("location: ../index.php?url=image&idGallery=$idGallery&error=commentSucess");
-            $stmt = NULL;
+
+            $sql = "SELECT notify FROM users WHERE users_id = '$users_id'" ;
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->execute();
+            $row = $stmt->fetch();
+            $notify = $row['notify'];
+
+            if ($notify==="yes"){    
             $this->sendNotificationOwner($idGallery, $postUser);
+            }
+
+
+            $stmt = NULL;
             exit();
         }
           
@@ -82,9 +92,10 @@ $idGallery = $_POST['idGallery'];
 // print_r($idGallery);
 $postUser = $_POST['useruid'];
 $postContent = $_POST['content'];
+$users_id =$_POST['userid'];
 
 $imageFormManage = new ImageFormManage;
-$imageFormManage->setComment($idGallery, $postUser, $postContent);
+$imageFormManage->setComment($idGallery, $postUser, $postContent, $users_id);
 
 
 

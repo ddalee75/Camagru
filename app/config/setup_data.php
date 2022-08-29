@@ -17,14 +17,15 @@ try {
     users_pwd LONGTEXT NOT NULL,
     users_email TINYTEXT NOT NULL,
     users_token VARCHAR(20) NOT NULL,
-    users_confirm INT NOT NULL DEFAULT '0',
+    users_confirm INT NOT NULL,
+    notify TINYTEXT NOT NULL,
     reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     pwd_token VARCHAR(20) NOT NULL,
     pwd_ask_date TIME
   )";
 
   $query_users_seed=
-  "INSERT INTO users(users_id, users_uid, users_pwd, users_email, users_token, users_confirm, pwd_token) VALUE ('1', 'admin', 'QWMFqO4/XsMMc', 'chilee42paris@gmail.com', '',  '1', '')";
+  "INSERT INTO users(users_id, users_uid, users_pwd, users_email, users_token, users_confirm, pwd_token) VALUE ('1', 'admin', 'QWMFqO4/XsMMc', 'chilee42paris@gmail.com', '',  '1', 'yes', '')";
 
   $query_gallery ="CREATE TABLE IF NOT EXISTS gallery (
           idGallery INT AUTO_INCREMENT PRIMARY KEY,
