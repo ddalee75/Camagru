@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/image.css">
-    <script type="text/javascript" src="../common/js/delPhoto.js"></script>
+    <!-- <script type="text/javascript" src="../common/js/delPhoto.js"></script> -->
     <title>Chilee's Camagru</title>
 </head>
 
@@ -19,10 +19,11 @@
     
             $showImage = new ImageManage();
             $showImage->showImage($idGallery);
+            
              if(isset($_GET["error"])){
                 if($_GET["error"] == "notYourPhoto"){
                    
-                    echo 'This is not your photo';
+                    echo 'This is not your photo, can\'t delete';
                 }
             }
         ?>
@@ -30,7 +31,15 @@
             <div class=liked_image>
             <img src="../common/img/like_no.png" width="20" height="20"></img>&nbsp1</div>
             <div class=croix_image>
-            <img id ="croix_image" src="../common/img/croix.png" name="userid" value="<?php echo $_SESSION["userid"];?>" name2="idGallery" value2="<?php echo $idGallery ?>" width="20" height="20"></img></div>
+            <form action="../classes/del_like_image.classes.php" method="POST" enctype="multipart/form-data">
+                  <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
+                  <input type="hidden" name="idGallery" value="<?php echo $idGallery; ?>">
+                  <button type="submit_croix" name="submit_delImage">x</button>
+        
+              </form>
+
+            <!-- <img id ="croix_image" src="../common/img/croix.png" name="userid" value="<?php echo $_SESSION["userid"];?>" name2="idGallery" value2="<?php echo $idGallery ?>" width="20" height="20"></img> -->
+            </div>
         </div>
         <div  id="jaxa2" style='width:60%;margin:5px;'></div>
         </div>

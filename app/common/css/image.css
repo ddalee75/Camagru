@@ -18,6 +18,7 @@ body {
 .showbloc_image{
     /* background-color: #d1aaaa; */
     width: 100%;
+    text-align: center;
 
 
 
@@ -27,7 +28,7 @@ body {
     /* background-color: rgb(33, 83, 83); */
    
     color: rgb(19, 6, 66);
-    text-align: left;
+    text-align: center;
     margin-top: 20px;
     line-height: 1.2;
     margin-bottom: 20px;

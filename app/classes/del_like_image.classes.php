@@ -1,11 +1,11 @@
 <?php 
 require_once('./dbh.classes.php');
 
-$idGallery= $_POST['idGallery'];
-$userid= $_POST['userid'];
+if(isset($_POST["submit_delImage"]))
+{
+    $userid= $_POST['userid'];
+    $idGallery = $_POST['idGallery'];
 
-// header("location: ../index.php?url=image&idGallery=$userid");
-// header("Refresh:0; url=../index.php?url=image&idGallery=$userid");
 
 $sql= "SELECT * FROM gallery WHERE idGallery = '$idGallery'" ;
 $conn = new Dbh;
@@ -31,5 +31,5 @@ if($row===1 && $userid===$users_id){
 else{
     header("location: ../index.php?url=image&idGallery=$idGallery&error=notYourPhoto");
 }
-
+}
 

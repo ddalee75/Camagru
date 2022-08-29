@@ -6,7 +6,7 @@ class GalleryManage extends Dbh
 {
     public function showGallery()
     {
-    $sql= "SELECT * FROM gallery";
+    $sql= "SELECT * FROM `gallery` ORDER BY `gallery`.`idGallery` ASC";
     $stmt = $this->connect()->query($sql);
     while($row =$stmt->fetch())
     {

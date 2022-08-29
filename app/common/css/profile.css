@@ -25,11 +25,24 @@
 }
 
 .photo_form{
+  /* background-color: #0c396d; */
+  background-image: url("../gallery/camera_630a32e267fed2.30838607.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 460px;
+  height: 345px;
+  
+
+
+}
+
+/* .photo_form{
     width: 30%;
     
     background-color: rgba(123, 138, 133, 0.37);
 
-}
+} */
 
 .content_form{
 

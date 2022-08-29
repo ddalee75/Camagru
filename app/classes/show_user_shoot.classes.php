@@ -6,8 +6,8 @@ class ShootManage extends Dbh
     {
 
     
-   
-    $sql= "SELECT * FROM gallery WHERE users_id = '$userid'" ;
+        
+    $sql= "SELECT * FROM gallery  WHERE users_id = '$userid' ORDER BY `gallery`.`idGallery` DESC" ;
     
     $stmt = $this->connect()->query($sql);
     while($row =$stmt->fetch())
