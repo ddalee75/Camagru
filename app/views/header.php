@@ -13,7 +13,7 @@
         
         <div class="nav_1_header">
                 
-                <a class="camera_header" href="http://localhost/index.php?url=camera">
+                <a class="camera_header" href="http://localhost/index.php?url=camera&page=1">
                 <p>Photomaton</p></a>
 
                

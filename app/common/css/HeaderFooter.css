@@ -116,10 +116,11 @@
 
 footer{
     color: rgb(9, 67, 121);
-    position: fixed;
+    position: relative;
     bottom: 10px;
-    text-align: center;
-    width: 100%;
+    text-align: right;
+    margin-right: 100px;
+    width: 95%;
     font-size: 12px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     

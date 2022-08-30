@@ -30,6 +30,7 @@
          <div class="icons_image">
             <div class=liked_image>
             <img src="../common/img/like_no.png" width="20" height="20"></img>&nbsp1</div>
+
             <div class=croix_image>
             <form action="../classes/del_like_image.classes.php" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
@@ -39,10 +40,12 @@
               </form>
 
             <!-- <img id ="croix_image" src="../common/img/croix.png" name="userid" value="<?php echo $_SESSION["userid"];?>" name2="idGallery" value2="<?php echo $idGallery ?>" width="20" height="20"></img> -->
-            </div>
-        </div>
+            </div> <!-- fin de croix_image -->
+
+        </div> <!-- fin de icons_image -->
+
         <div  id="jaxa2" style='width:60%;margin:5px;'></div>
-        </div>
+        </div> <!-- fin de showbloc_image -->
         
         <div class="comments_image">
         
@@ -70,7 +73,7 @@
                         }
                     }
                 ?>        
-            </div>
+            </div> <!-- fin de message_image -->
         
 
 
@@ -83,10 +86,10 @@
                 $show_comment = new CommentManage();
                 $show_comment->showComment($idGallery);
             ?>
-            </div>
-        </div>
+            </div> <!-- fin de cshow_comments -->
+        </div> <!-- fin de comments_image -->
 
         
-</div>
+</div> <!-- all_image -->
 </body>
 </html>

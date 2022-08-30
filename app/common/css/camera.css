@@ -19,6 +19,7 @@
 
 .webcam_center{
 
+    
     display:flex;
     margin: 0 auto;
     width: 460px;
@@ -149,6 +150,267 @@ top:0;
 .caroussel{
     background-color: rgb(233, 233, 233);
     width: 60%;
+    height: 170px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.card{
+    background-color: #eeeeee;
+    width: 92px;
+    height: 68px;
+    /* border: 2px solid red; */
+    overflow: hidden;
+    margin: 10px;
+}
+
+
+
+.showUserShootEnv{
+    width:100%;
+    /* background-color: #05658b; */
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+   
+    
+
+}
+
+
+.showUserShoot{
+    /* background-color: rgb(207, 0, 0); */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+
+    text-align: center; 
+    margin-bottom: 100px;
+
+  
+}
+
+.img_bloc_shoot_env{
+
+    /* background-color: blue; */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+
+
+
+}
+
+.img_bloc_Shoot{
+    
+    width: 115px;
+    margin: 5px;
+}
+.photo_Shoot{
+    width: 115px;
+    height: 87px;
+    margin-bottom:5px ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+
+ul.pagination{
+    width: 100%;
+    /* background-color: rgba(218, 20, 63, 0.349); */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+li.page-item{
+    margin-top: 15px;
+   margin-left: 5px;
+   margin-right: 5px;
+   list-style: none;
+  
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+
+
+
+
+  @media only screen and (max-width: 600px) {
+
+
+
+  /* CSS comes here */
+*{
+    margin:0px;
+    box-sizing: border-box;
+}
+
+.all_webcam {
+    /* background-color: rgb(55, 196, 149); */
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.webcam_center{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 460px;
+    height: 345px;
+    background-color: rgb(214, 214, 214);
+   
+ 
+}
+
+.webcam {
+    position: relative;
+    width: 460 px;
+    height: 345 px;
+}
+
+.overlay {
+/* background-color: rgba(87, 61, 28, 0.658); */
+border: 1px solid rgb(145, 144, 144);
+position:absolute;
+top:0;
+}
+
+/* #photo {
+    border: 1px solid black;
+    width: 460px;
+    height: 325px;
+} */
+
+
+
+#canvas {
+    display: none;
+}
+
+/* .camera {
+    width: 460px;
+    display: inline-block;
+} */
+
+/* .output {
+    width: 460px;
+    display: inline-block;
+} */
+
+
+.startbutton_css{
+    /* background-color: #510069; */
+    width: 100%;
+    height: 20px;
+    
+}
+
+#startbutton {
+  
+    margin-top: 20px;
+    width: 160px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    bottom: 30px;
+    padding: 12px;
+    background-color: #510069;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#savePhoto {
+  
+    margin-top: 5px;
+    width: 160px;
+    /* margin-left: auto;
+    margin-right: auto; */
+   
+    padding: 12px;
+    background-color: #510069;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* #mergePhoto {
+  
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 36px;
+    padding: 20px;
+    background-color: #488d08;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+    border-radius: 10px;
+} */
+
+#uploadImage {
+  
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 10px;
+    padding: 12px;
+    background-color: #05658b;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+.titre1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: rgb(13, 115, 163);
+}
+
+.caroussel_center{
+   
+    display: flex;
+    justify-content: center;
+}
+
+.caroussel{
+    background-color: rgb(233, 233, 233);
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
@@ -168,31 +430,37 @@ top:0;
 
 
 
-.showUserShootEnv{
-
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-   
-    
-
-}
-
-
 .showUserShoot{
-    background-color: rgb(233, 233, 233);
-    width: 60%;
+    /* background-color: rgb(207, 0, 0); */
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
+    flex-direction: column;
+    align-items: center;
+  
 
-    text-align: center;
+    text-align: center; 
     margin-bottom: 100px;
 
   
 }
 
+.img_bloc_shoot_env{
+
+    /* background-color: blue; */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+
+
+}
+
 .img_bloc_Shoot{
+    
+    width: 115px;
     margin: 5px;
 }
 .photo_Shoot{
@@ -205,3 +473,29 @@ top:0;
   
 }
 
+
+ul.pagination{
+    width: 100%;
+    /* background-color: rgba(218, 20, 63, 0.349); */
+    display: flex;
+    justify-content: space-around;
+
+}
+
+li.page-item{
+    margin-top: 15px;
+   margin-left: 5px;
+   margin-right: 5px;
+   list-style: none;
+  
+}
+
+a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+
+}

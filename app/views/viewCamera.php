@@ -1,6 +1,8 @@
 <?php
             if(isset($_SESSION["userid"]))
             {
+
+
         ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@
     <title>Chilee's Camagru</title>
     
 </head>
+
 
 <body>
 

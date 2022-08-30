@@ -27,7 +27,7 @@ $stmt=null;
     <h3 type="text">My Profile</h3></div>
 
     <div class="env_form">
-        <div class="photo_form" style="background-image:url('../common/gallery/camera_630a32e267fed2.30838607.png');" >
+        <div class="photo_form" style="background-image:url('../common/img/profile.png');" >
         </div><!-- fin  photo_form -->
 
 
