@@ -1,3 +1,9 @@
+<?php
+            if(isset($_SESSION["userid"]))
+            {
+
+
+        ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,3 +36,5 @@
 </body>
 </html>
 <!-- <img src="../common/img/btn_play1.png"></img> -->
+
+<?php } ?>

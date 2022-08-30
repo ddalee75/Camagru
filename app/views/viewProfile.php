@@ -1,3 +1,9 @@
+<?php
+            if(isset($_SESSION["userid"]))
+            {
+
+
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,3 +86,4 @@ $stmt=null;
 
 </body>
 </html>
+<?php } ?>

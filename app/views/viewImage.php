@@ -27,6 +27,12 @@
                 }
             }
         ?>
+        
+        <?php
+            if(isset($_SESSION["userid"]))
+            {
+        ?>
+
          <div class="icons_image">
             <div class=liked_image>
             <img src="../common/img/like_no.png" width="20" height="20"></img>&nbsp1</div>
@@ -75,6 +81,9 @@
                 ?>        
             </div> <!-- fin de message_image -->
         
+
+            <?php } ?> 
+
 
 
             <div class="show_comments">
