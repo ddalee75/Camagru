@@ -116,7 +116,7 @@
 
 footer{
     color: rgb(9, 67, 121);
-    position: relative;
+    position: fixed;
     bottom: 10px;
     text-align: right;
     margin-right: 100px;

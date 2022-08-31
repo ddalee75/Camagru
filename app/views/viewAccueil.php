@@ -38,6 +38,9 @@
                     if($_GET["error"] == "stmtfailed"){
                         echo 'Statment failed';
                     }
+                    if($_GET["error"] == "stmtfailed1"){
+                        echo 'Statment failed 1';
+                    }
                     if($_GET["error"] == "useroremailtaken"){
                         echo 'User or email taken';
                     }

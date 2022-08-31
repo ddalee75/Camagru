@@ -8,9 +8,25 @@ class CheckResetPwd extends Dbh
    
     public function CheckInfo($email, $TokenPWD, $pwdOne, $pwdTwo)
     {
+         function passwordSecurity($pwdOne) 
+        {
+            $uppercase = preg_match('@[A-Z]@', $pwdOne);
+            
+            $result;
+            if (!$uppercase)
+            {
+                $result =false;
+            }
+            else
+            {
+                $result = true;
+            }
+            return $result;
+        }
+
         if(!empty($email) && !empty($TokenPWD))
         {
-
+              
             //checker si Token expire 
             $sqlGetTime = "SELECT * FROM users WHERE users_email=?";
             $stmt = $this->connect()->prepare($sqlGetTime);
@@ -42,8 +58,8 @@ class CheckResetPwd extends Dbh
             
             if($stmt->fetchColumn() > 0)
             {
-            
-                if(!empty($pwdOne) && !empty($pwdTwo))
+                $check_uppercase = passwordSecurity($pwdOne);
+                if(!empty($pwdOne) && !empty($pwdTwo) && $check_uppercase === true )
                 {
                     if ($pwdOne === $pwdTwo)
                     {

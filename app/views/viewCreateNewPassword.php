@@ -31,7 +31,7 @@
         <form action="../classes/create_new_password.classes.php" method="post">
                 <input type="hidden" name="email" value="<?php echo $email ?>">
                 <input type="hidden" name="TokenPWD" value="<?php echo $TokenPWD ?>">
-                <input type="password" name="resetpwd" placeholder="Enter new password"><br>
+                <input type="password" name="resetpwd" placeholder="Enter new password "><br>
                 <input type="password" name="repeatpwd" placeholder="Repeat your password"><br>
                 
                 <div class="bn"><button type="submit" name="reset_submit">Create</button></div>
@@ -44,7 +44,7 @@
                     if(isset($_GET["error"]))
                     {
                         if($_GET["error"] == "EmptyInput"){
-                            echo 'Empty Input';
+                            echo 'Empty Input or no 1 capital letter';
                         }
                         if($_GET["error"] == "PasswordNotMatch"){
                             echo "Password don't match";
