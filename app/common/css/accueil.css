@@ -26,7 +26,7 @@ body, html {
 }
 
 .bloc_accueil{
-   
+    /* background-color: #45a049; */
     width: 20%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
@@ -128,7 +128,7 @@ input[type=password]{
 }
 
 .pwdforgot{
-    background-color: #f6f6f6;
+    background-color: #f8f7f7;
     font-size: small;
     margin-top: 5px;
     margin-left: 20px ;
@@ -137,6 +137,8 @@ input[type=password]{
     text-align: right;
     border-radius: 5px;
     width: 250px;
+    color: rgb(83, 83, 83);
+    
 
 }
 
@@ -147,6 +149,45 @@ input[type=password]{
     color:rgb(173, 0, 9);
 
 }
+
+.lien_gallery{
+
+    background-color: #cecece;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #f6f6f6;
+    font-size: 18px;
+    padding-top: 13px;
+    
+    
+}
+
+.lien_gallery:hover{
+
+    background-color: #189100;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #f6f6f6;
+    font-size: 18px;
+    padding-top: 13px;
+    
+    
+}
+a:link {
+     text-decoration: none;
+  }
+  
+
 
 @media only screen and (max-width: 600px) {
 
@@ -181,13 +222,14 @@ body, html {
 }
 
 .bloc_accueil{
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #dadada;
     width: 100%;
-    height: 60%;
+    height: 80%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
@@ -287,13 +329,14 @@ input[type=password]{
 }
 
 .pwdforgot{
-    background-color: #f6f6f600;
+    background-color: #e6e3e3;
     font-size: small;
     margin-top: 5px;
-    margin-left: 20px ;
+    margin-left: 50px ;
     margin-bottom: 5px;
     margin-right: 35px;
     text-align: right;
+
     border-radius: 5px;
     width: 250px;
 

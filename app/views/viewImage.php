@@ -11,6 +11,9 @@
 </head>
 
 <body>
+
+
+
 <div class="all_image">
         <div class="showbloc_image">
         <?php
@@ -33,17 +36,29 @@
             {
         ?>
 
-         <div class="icons_image">
-            <div class=liked_image>
-            <img src="../common/img/like_no.png" width="20" height="20"></img>&nbsp1</div>
+        <?php 
+            require_once('./classes/dbh.classes.php');
+            $sql= "SELECT idGallery FROM likes WHERE idGallery = '$idGallery'" ;
+            $conn = new Dbh;
+            $stmt = $conn->connect()->prepare($sql);
+            $stmt->execute();
+            $likes =$stmt->rowCount();
+
+        ?>        
+
+            <div class="icons_image">
+            <div class=likes>
+            <a href="../classes/like_image.classes.php?t=1&idGallery=<?php echo $idGallery; ?>&userid=<?php echo $_SESSION["userid"]; ?>" ><img src="../common/img/like_yes.png" width=20px></img></a>&nbsp;&nbsp;(&nbsp;<?php echo $likes ?>&nbsp;)
+        
+           
+            </div>
 
             <div class=croix_image>
-            <form action="../classes/del_like_image.classes.php" method="POST" enctype="multipart/form-data">
+            <form action="../classes/del_image.classes.php" method="POST" enctype="multipart/form-data">
                   <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
                   <input type="hidden" name="idGallery" value="<?php echo $idGallery; ?>">
                   <button type="submit_croix" name="submit_delImage">x</button>
-        
-              </form>
+            </form>
 
             <!-- <img id ="croix_image" src="../common/img/croix.png" name="userid" value="<?php echo $_SESSION["userid"];?>" name2="idGallery" value2="<?php echo $idGallery ?>" width="20" height="20"></img> -->
             </div> <!-- fin de croix_image -->

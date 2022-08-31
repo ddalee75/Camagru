@@ -86,10 +86,17 @@
                 <br>
                 <div class="bn"><button type="submit" name="submit">SIGN UP</button></div>
             </form>
+
+            
         </div>
+        <div class ="lien_gallery"><a href="../index.php?url=gallery" >Preview Gallery</a</div>
+        
 
         
-    </div>    
+        </div>    <!-- fin bloc_accueil -->
+       
+    </div>
+    
 </div>
 
 

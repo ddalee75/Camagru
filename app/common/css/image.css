@@ -134,3 +134,23 @@ button[type=submit]:hover {
     color:rgb(173, 0, 9);
 
 }
+
+.likes{
+    width: 100px ;
+    /* background-color: #c1afc5; */
+    margin-right: 100px;
+    color: #057575;;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+a:link{
+    text-decoration: none;
+    color: #008585;
+}
+a:visited{
+ 
+    color: #057575;
+
+}

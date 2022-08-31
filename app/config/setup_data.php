@@ -60,6 +60,11 @@ try {
     
    )";
 
+  $query_likes ="CREATE TABLE IF NOT EXISTS likes (
+    id_likes INT AUTO_INCREMENT PRIMARY KEY,
+    idGallery TINYTEXT not null,
+    users_id INT(11), 
+   )";
 
 
 try{
@@ -79,6 +84,8 @@ try{
   $conn->exec($query_comment);
   echo "Table comment created successfully,";
 
+  $conn->exec($query_likes);
+  echo "Table likes created successfully,";
 
 
 } catch (PDOException $e) {

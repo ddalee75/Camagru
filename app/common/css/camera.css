@@ -149,7 +149,7 @@ top:0;
 
 .caroussel{
     background-color: rgb(233, 233, 233);
-    width: 60%;
+    width: 50%;
     height: 170px;
     display: flex;
     flex-direction: row;
