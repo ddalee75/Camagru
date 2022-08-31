@@ -106,7 +106,7 @@ body {
 button[type=submit] {
   
     width: 160px;
-    background-color: rgb(40, 81, 156);
+    background-color: rgb(40, 133, 156);
     color: white;
     padding: 14px 14px;
     align-items: flex-end;
@@ -154,3 +154,12 @@ a:visited{
     color: #057575;
 
 }
+
+.partage_sociaux{
+    margin-top: 20px;
+    /* background-color: aqua; */
+ 
+   
+    text-align: center;
+}
+

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/image.css">
-    <!-- <script type="text/javascript" src="../common/js/delPhoto.js"></script> -->
+   
     <title>Chilee's Camagru</title>
 </head>
 
@@ -98,7 +98,14 @@
         
 
             <?php } ?> 
-
+            <div class="partage_sociaux">
+<button class="button share_twitter" data-url="http://localhost/index.php?url=image&idGallery=<?php echo $idGallery ?>" style = 'background-color: #00ACEE; border:0px;height:30px;color:white;'>
+    Partager sur twitter
+</button>
+<button class="button share_facebook" data-url="http://localhost/index.php?url=image&idGallery=<?php echo $idGallery ?>" style = 'background-color: #3b5998; border:0px;height:30px;color:white;'>
+    Partager sur facebook
+</button>
+</div>
 
 
             <div class="show_comments">
@@ -113,7 +120,11 @@
             </div> <!-- fin de cshow_comments -->
         </div> <!-- fin de comments_image -->
 
+
         
 </div> <!-- all_image -->
+
+
+<script type="text/javascript" src="../common/js/partageSociaux.js"></script>
 </body>
 </html>

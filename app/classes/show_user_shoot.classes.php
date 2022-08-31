@@ -54,6 +54,7 @@ class ShootManage extends Dbh
     }
     ?>
     </div> <!-- fin de img_bloc_shoot_env -->
+    
     <nav class ="show_shoot_img">
         <ul class="pagination">
             <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->
