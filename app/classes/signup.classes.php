@@ -42,7 +42,7 @@ class Signup extends Dbh
         //Crée une clé de hachage pour un mot de passe
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
         $pwd_token = "";
-        $notify = 1; 
+        $notify = "yes"; 
         // header("location: ../index.php?error=username");
         $users_confirm = 0;
         if(!$stmt->execute(array($uid, $hashedPwd, $email, $newToken, $users_confirm, $notify, $pwd_token)))

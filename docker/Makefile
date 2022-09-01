@@ -33,6 +33,7 @@ setup_ip:
 
 define wait8m
 	docker-compose -f ${SRC} up --build -d
+	mkdir -p ../app/common/gallery
 	chown www-data ../app/common/gallery/
 	echo Waiting
     sleep 480s

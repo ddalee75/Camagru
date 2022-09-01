@@ -16,6 +16,10 @@
   ?> -->
 <div class="all_gallery">
   
+<?php
+            if(isset($_SESSION["userid"]))
+            {
+        ?>
   <div class="upload">
     
               <form action="../classes/gallery.classes.php" method="POST" enctype="multipart/form-data">
@@ -26,10 +30,13 @@
         
               </form>
             
-              
+       
               
   </div>
   <div class="titre_upload">Upload Your Image Here</div>
+  <?php
+          }
+        ?> 
   <div class="message_gallery">
   <?php 
                       if(isset($_GET["error"])){
