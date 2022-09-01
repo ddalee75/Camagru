@@ -11,7 +11,7 @@ class Gallery extends Dbh
       //recuperer userid pour savoir qui a poster la photo
       $users_id = $_POST["userid"];
      
-      if (!empty($_POST['filename']))
+      if (!empty($_POST['filename']) && !preg_match("/[^a-z\-0-9]/i", $_POST['filename']))
       {
         if (!empty($_FILES)){
           $file = $_FILES['file'];

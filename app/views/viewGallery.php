@@ -44,7 +44,7 @@
                             echo 'Upload Success, Go back to camera please';
                           }
                           if($_GET["error"] == "FileNamePlease"){
-                            echo 'Please give a file name';
+                            echo 'Please give a file name, no speciaux caracters';
                           }
                           if($_GET["error"] == "FileTooBig"){
                             echo 'Your file is too Big <2Mb please';

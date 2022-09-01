@@ -4,7 +4,8 @@ NAME = camagru
 all: $(NAME)
 
 $(NAME):
-	docker-compose -f ${SRC} up --build -d
+	$(call wait8m)
+
 
 clean:
 	docker-compose -f ${SRC} stop
@@ -23,9 +24,17 @@ setup_ip:
 	echo "127.0.0.1 camagru.42.fr" | sudo tee -a /etc/hosts
 
 
-setup_data:
-	docker exec php74-container php config/setup_data.php
-	chown www-data ../app/common/gallery/
+# set_data:
+# 	docker exec php74-container php config/setup_data.php
+	
 	
 
 .PHONY: all clean flcean re setup
+
+define wait8m
+	docker-compose -f ${SRC} up --build -d
+	chown www-data ../app/common/gallery/
+	echo Waiting
+    sleep 480s
+	docker exec php74-container php config/setup_data.php
+endef

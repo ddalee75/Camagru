@@ -15,7 +15,7 @@ class ImageFormManage extends Dbh
         if (isset($_POST['submit']))
         { 
        
-         
+            
             $sql= "SELECT * FROM comment" ;
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute();
@@ -91,7 +91,7 @@ class ImageFormManage extends Dbh
 $idGallery = $_POST['idGallery'];
 // print_r($idGallery);
 $postUser = $_POST['useruid'];
-$postContent = $_POST['content'];
+$postContent = htmlentities($_POST['content']);
 $users_id =$_POST['userid'];
 
 $imageFormManage = new ImageFormManage;

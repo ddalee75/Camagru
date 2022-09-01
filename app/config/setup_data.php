@@ -32,6 +32,7 @@ try {
           nameGiven LONGTEXT not null,
           imgFullNameGallery LONGTEXT not null,
           path VARCHAR(1000) NOT NULL,
+          date_create TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
           users_id INT(11), 
           FOREIGN KEY (users_id) REFERENCES users(users_id)
           
